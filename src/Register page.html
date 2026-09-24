@@ -1,0 +1,212 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Register - Reen Bank</title>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+
+  <body class="min-h-screen bg-[#d8f5eb]">
+    <!-- =========================
+         REGISTER PAGE
+    ========================== -->
+
+    <main class="min-h-screen relative overflow-hidden">
+      <!-- MAIN CONTENT -->
+      <div
+        class="relative z-10 min-h-screen max-w-7xl mx-auto px-8 lg:px-14 flex items-center"
+      >
+        <div
+          class="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+        >
+          <!-- ========
+                     LEFT SIDE
+                =========== -->
+          <div class="text-gray-800">
+            <!-- LOGO -->
+            <a href="Landing page.html" class="flex items-center gap-3 mb-16">
+              <img class="w-40" src="/images/logo.png" alt="" />
+            </a>
+
+            <!-- SMALL TITLE -->
+            <p class="text-emerald-500 text-sm font-medium mb-2">Reen Bank</p>
+
+            <!-- MAIN TITLE -->
+            <h1
+              class="text-4xl md:text-5xl lg:text-[46px] leading-[1.1] font-semibold max-w-lg"
+            >
+              Experience
+              <br />
+              hassle-free banking
+            </h1>
+
+            <p class="text-sm text-gray-600 leading-6 max-w-md mt-5">
+              Experience simple, secure, and stress-free banking. Say goodbye to
+              long queues and complex procedures and hello to hassle-free
+              banking with Reen Bank.
+            </p>
+
+            <!-- SOCIAL ICONS -->
+            <div class="flex items-center gap-3 mt-16">
+              <a
+                href="#"
+                class="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center text-[10px] font-bold"
+              >
+                <img src="/images/facebook 2.png" alt="" />
+              </a>
+
+              <a
+                href="#"
+                class="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center text-[9px] font-bold"
+              >
+                <img src="/images/instagram 2.png" alt="" />
+              </a>
+
+              <a
+                href="#"
+                class="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center text-[9px] font-bold"
+              >
+                <img src="/images/twitter 2.png" alt="" />
+              </a>
+            </div>
+          </div>
+
+          <!-- =========================
+                     REGISTER FORM
+                ========================== -->
+          <div class="flex justify-center lg:justify-end">
+            <div
+              class="bg-white w-full max-w-[365px] rounded-2xl px-8 py-8 shadow-sm"
+            >
+              <h2 class="text-emerald-500 text-xl font-semibold mb-6">
+                Register
+              </h2>
+
+              <form id="registerForm">
+                <!-- NAME -->
+                <div class="mb-3">
+                  <label
+                    for="name"
+                    class="block text-[9px] font-medium text-gray-800 mb-1"
+                  >
+                    Name
+                  </label>
+
+                  <div class="relative">
+                    <input
+                      type="text"
+                      id="name"
+                      name="name"
+                      placeholder="Enter name here"
+                      class="w-full h-8 border border-gray-300 rounded-md px-3 pr-9 text-[9px] outline-none focus:border-emerald-500"
+                    />
+
+                    <span
+                      class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
+                    >
+                      <img src="/images/fi-rr-user (1).png" alt=""
+                    /></span>
+                  </div>
+                </div>
+
+                <!-- EMAIL -->
+                <div class="mb-3">
+                  <label
+                    for="email"
+                    class="block text-[9px] font-medium text-gray-800 mb-1"
+                  >
+                    Email
+                  </label>
+
+                  <div class="relative">
+                    <input
+                      type="email"
+                      id="email"
+                      name="email"
+                      placeholder="Enter your Email"
+                      class="w-full h-8 border border-gray-300 rounded-md px-3 pr-9 text-[9px] outline-none focus:border-emerald-500"
+                    />
+
+                    <span
+                      class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
+                    >
+                      <img src="/images/fi-rr-envelope.png" alt="" />
+                    </span>
+                  </div>
+                </div>
+
+                <!-- PASSWORD -->
+                <div class="mb-3">
+                  <label
+                    for="password"
+                    class="block text-[9px] font-medium text-gray-800 mb-1"
+                  >
+                    Password
+                  </label>
+
+                  <div class="relative">
+                    <input
+                      type="password"
+                      id="password"
+                      name="password"
+                      placeholder="Enter your Password"
+                      class="w-full h-8 border border-gray-300 rounded-md px-3 pr-9 text-[9px] outline-none focus:border-emerald-500"
+                    />
+
+                    <span
+                      class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
+                    >
+                      <img src="/images/fi-rr-lock.png" alt="" />
+                    </span>
+                  </div>
+                </div>
+
+                <div class="flex items-start gap-2 mt-2">
+                  <input
+                    type="checkbox"
+                    id="terms"
+                    class="mt-[2px] accent-emerald-500"
+                  />
+
+                  <label for="terms" class="text-[8px] text-gray-400">
+                    I agree to all the
+                    <a href="#" class="text-emerald-500"> Terms </a>,
+                    <a href="#" class="text-emerald-500"> Privacy Policy </a>
+                    and
+                    <a href="#" class="text-emerald-500"> Fees </a>.
+                  </label>
+                </div>
+
+                <!-- REGISTER BUTTON -->
+
+                <a
+                  href="OTP.html"
+                  class="w-full h-10 bg-[#32b98a] hover:bg-[#27a97d] text-white rounded-md flex items-center justify-center text-xs font-semibold transition"
+                >
+                  Register
+                </a>
+                <!-- LOGIN -->
+                <p class="text-[8px] text-gray-400 mt-4">
+                  Already have an Account?
+
+                  <a
+                    href="Login page.html"
+                    class="text-emerald-500 font-medium"
+                  >
+                    Log in.
+                  </a>
+                </p>
+              </form>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

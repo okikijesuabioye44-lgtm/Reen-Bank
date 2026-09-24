@@ -1,0 +1,391 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Profile - Reen Bank</title>
+
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+
+  <body class="min-h-screen bg-[#f3fbf8] text-gray-800">
+    <!-- =========================
+         BACKGROUND
+    ========================== -->
+
+    <div class="fixed inset-0 opacity-[0.10] pointer-events-none">
+      <img
+        src="./images/bank-pattern.png"
+        alt=""
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- =========================
+         MAIN PAGE
+    ========================== -->
+
+    <div class="relative z-10 min-h-screen max-w-[1250px] mx-auto">
+      <!-- =========================
+             HEADER
+        ========================== -->
+
+      <header class="h-[110px] px-8 flex items-center justify-between">
+        <!-- LOGO -->
+
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 border-2 border-gray-800 rounded-md flex items-center justify-center"
+          >
+            <span class="text-2xl font-bold text-emerald-500"> rb </span>
+          </div>
+
+          <span class="text-[22px] font-semibold"> Reen Bank </span>
+        </div>
+
+        <!-- PAGE TITLE -->
+
+        <h1 class="text-[28px] font-semibold mr-auto ml-16">Profile</h1>
+
+        <!-- USER AREA -->
+
+        <div class="flex items-center gap-8">
+          <!-- USER NAME -->
+
+          <div class="text-center">
+            <p class="text-[9px] text-emerald-500">Maureen Oguche</p>
+
+            <p class="text-[20px] font-semibold leading-none mt-1">
+              1234567890
+            </p>
+          </div>
+
+          <!-- SEARCH -->
+
+          <div class="hidden md:flex items-center gap-2 text-gray-500">
+            <span class="text-xl"> ⌕ </span>
+
+            <input
+              type="text"
+              placeholder="Search"
+              class="w-[70px] bg-transparent outline-none text-[9px] placeholder:text-gray-400"
+            />
+          </div>
+
+          <!-- NOTIFICATION -->
+
+          <button class="text-xl text-gray-600">♧</button>
+
+          <!-- PROFILE IMAGE -->
+
+          <div class="w-9 h-9 rounded-full overflow-hidden bg-gray-300">
+            <img
+              src="./images/profile.jpg"
+              alt="Profile"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </header>
+
+      <!-- =========================
+             PAGE BODY
+        ========================== -->
+
+      <div class="grid grid-cols-[180px_1fr] gap-8 px-8">
+        <!-- =========================
+                 SIDEBAR
+            ========================== -->
+
+        <aside class="min-h-[650px] flex flex-col">
+          <nav class="mt-8 space-y-3">
+            <!-- OVERVIEW -->
+
+            <a
+              href="dashboard.html"
+              class="flex items-center gap-5 px-3 py-3 text-gray-600 text-[12px] hover:text-emerald-500"
+            >
+              <span class="text-[22px]"> ▦ </span>
+
+              Overview
+            </a>
+
+            <!-- ACCOUNTS -->
+
+            <a
+              href="accounts.html"
+              class="flex items-center gap-5 px-3 py-3 text-gray-600 text-[12px] hover:text-emerald-500"
+            >
+              <span class="text-[22px]"> ▰ </span>
+
+              Accounts
+            </a>
+
+            <!-- TRANSACTIONS -->
+
+            <a
+              href="transactions.html"
+              class="flex items-center gap-5 px-3 py-3 text-gray-600 text-[12px] hover:text-emerald-500"
+            >
+              <span class="text-[22px]"> ↔ </span>
+
+              Transactions
+            </a>
+
+            <!-- PROFILE ACTIVE -->
+
+            <a
+              href="profile.html"
+              class="flex items-center gap-5 px-3 py-3 text-emerald-500 text-[12px] font-medium"
+            >
+              <span class="text-[22px]"> ♙ </span>
+
+              Profile
+            </a>
+          </nav>
+
+          <!-- LOGOUT -->
+
+          <a
+            href="login.html"
+            class="mt-auto mb-8 flex items-center gap-5 px-3 py-3 text-gray-600 text-[12px]"
+          >
+            <span class="text-[22px]"> ← </span>
+
+            Logout
+          </a>
+        </aside>
+
+        <!-- =========================
+                 MAIN CONTENT
+            ========================== -->
+
+        <main class="pt-8 pb-12 grid grid-cols-[1fr_320px] gap-20">
+          <!-- =========================
+                     PROFILE CARD
+                ========================== -->
+
+          <section
+            class="bg-white rounded-lg min-h-[548px] px-16 py-7 flex flex-col items-center"
+          >
+            <!-- PROFILE IMAGE -->
+
+            <div
+              class="relative w-[108px] h-[108px] rounded-full overflow-visible mb-4"
+            >
+              <img
+                src="./images/profile.jpg"
+                alt="Maureen Oguche"
+                class="w-full h-full object-cover rounded-full"
+              />
+
+              <!-- EDIT ICON -->
+
+              <button
+                class="absolute right-[-2px] top-[5px] w-6 h-6 rounded-full bg-gray-200 text-gray-600 text-xs flex items-center justify-center"
+              >
+                ✎
+              </button>
+            </div>
+
+            <!-- NAME -->
+
+            <h2 class="text-[22px] font-semibold">Maureen Oguche</h2>
+
+            <!-- PRO USER -->
+
+            <span
+              class="mt-2 bg-[#dfcaff] text-purple-700 text-[9px] font-medium px-5 py-2 rounded-md"
+            >
+              Pro User
+            </span>
+
+            <!-- INFORMATION -->
+
+            <div class="w-full max-w-[240px] mt-8">
+              <!-- EMAIL -->
+
+              <div class="pb-5 border-b border-gray-200">
+                <p class="text-[10px] text-emerald-500 mb-1">Email</p>
+
+                <p class="text-[16px] font-semibold">
+                  oguchemaureenm@gmail.com
+                </p>
+              </div>
+
+              <!-- PHONE -->
+
+              <div class="py-5 border-b border-gray-200">
+                <p class="text-[10px] text-emerald-500 mb-1">Phone Number</p>
+
+                <p class="text-[16px] font-semibold">+234 803 041 1314</p>
+              </div>
+
+              <!-- GENDER -->
+
+              <div class="pt-5">
+                <p class="text-[10px] text-emerald-500 mb-1">Gender</p>
+
+                <p class="text-[16px] font-semibold">Female</p>
+              </div>
+            </div>
+
+            <!-- RESET PASSWORD -->
+
+            <button
+              class="w-full max-w-[240px] mt-9 py-3 rounded-lg bg-[#31bb88] text-white text-[14px] font-semibold hover:bg-[#28aa7b] transition"
+            >
+              Reset Password
+            </button>
+          </section>
+
+          <!-- =========================
+                     RIGHT SIDE
+                ========================== -->
+
+          <section class="pt-0">
+            <!-- =========================
+                         MAIN ACCOUNT
+                    ========================== -->
+
+            <div class="relative bg-[#cef3e4] rounded-lg h-[93px] px-6 py-5">
+              <p class="text-[10px] text-purple-800 font-medium">
+                Main Account
+              </p>
+
+              <p class="text-[23px] font-semibold leading-none mt-1">
+                ₦ 44,500.00
+              </p>
+
+              <!-- HIDE BALANCE -->
+
+              <button class="absolute right-6 top-5 text-gray-700 text-lg">
+                ◉
+              </button>
+            </div>
+
+            <!-- =========================
+                         TRANSACTIONS
+                    ========================== -->
+
+            <div class="mt-16">
+              <div class="flex items-center justify-between mb-4">
+                <h2 class="text-[17px] font-semibold">Transactions</h2>
+
+                <a href="transactions.html" class="text-emerald-500 text-2xl">
+                  →
+                </a>
+              </div>
+
+              <!-- TRANSACTION 1 -->
+
+              <div
+                class="flex items-center justify-between py-2 border-b border-gray-200"
+              >
+                <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
+
+                <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
+
+                <p class="text-[10px] text-red-500 font-medium">- 10,000.00</p>
+              </div>
+
+              <!-- TRANSACTION 2 -->
+
+              <div
+                class="flex items-center justify-between py-2 border-b border-gray-200"
+              >
+                <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
+
+                <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
+
+                <p class="text-[10px] text-[#31bb88] font-medium">
+                  + 10,000.00
+                </p>
+              </div>
+
+              <!-- TRANSACTION 3 -->
+
+              <div
+                class="flex items-center justify-between py-2 border-b border-gray-200"
+              >
+                <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
+
+                <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
+
+                <p class="text-[10px] text-red-500 font-medium">- 10,000.00</p>
+              </div>
+
+              <!-- TRANSACTION 4 -->
+
+              <div
+                class="flex items-center justify-between py-2 border-b border-gray-200"
+              >
+                <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
+
+                <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
+
+                <p class="text-[10px] text-[#31bb88] font-medium">
+                  + 10,000.00
+                </p>
+              </div>
+
+              <!-- TRANSACTION 5 -->
+
+              <div
+                class="flex items-center justify-between py-2 border-b border-gray-200"
+              >
+                <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
+
+                <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
+
+                <p class="text-[10px] text-red-500 font-medium">- 10,000.00</p>
+              </div>
+
+              <!-- TRANSACTION 6 -->
+
+              <div
+                class="flex items-center justify-between py-2 border-b border-gray-200"
+              >
+                <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
+
+                <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
+
+                <p class="text-[10px] text-[#31bb88] font-medium">
+                  + 10,000.00
+                </p>
+              </div>
+
+              <!-- TRANSACTION 7 -->
+
+              <div
+                class="flex items-center justify-between py-2 border-b border-gray-200"
+              >
+                <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
+
+                <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
+
+                <p class="text-[10px] text-red-500 font-medium">- 10,000.00</p>
+              </div>
+
+              <!-- TRANSACTION 8 -->
+
+              <div class="flex items-center justify-between py-2">
+                <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
+
+                <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
+
+                <p class="text-[10px] text-[#31bb88] font-medium">
+                  + 10,000.00
+                </p>
+              </div>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

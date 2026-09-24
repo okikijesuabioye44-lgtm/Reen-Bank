@@ -1,0 +1,219 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Email Verification - Reen Bank</title>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+
+  <body class="min-h-screen bg-[#d8f5eb]">
+    <!-- =========================
+         OTP VERIFICATION PAGE
+    ========================== -->
+
+    <main class="min-h-screen relative overflow-hidden">
+      <!-- =========================
+             BACKGROUND PATTERN
+        ========================== -->
+
+      <div class="absolute inset-0 opacity-20">
+        <img
+          src="./images/bank-pattern.png"
+          alt=""
+          class="w-full h-full object-cover"
+        />
+      </div>
+
+      <!-- =========================
+             MAIN CONTENT
+        ========================== -->
+
+      <div
+        class="relative z-10 min-h-screen max-w-7xl mx-auto px-8 lg:px-16 flex items-center"
+      >
+        <div
+          class="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
+        >
+          <!-- =========================
+                     LEFT SIDE
+                ========================== -->
+
+          <div class="text-gray-800">
+            <!-- LOGO -->
+
+            <a href="Landing page.html" class="flex items-center gap-3 mb-14">
+              <img class="w-40" src="/images/logo.png" alt="" />
+            </a>
+
+            <!-- SMALL TITLE -->
+
+            <p class="text-emerald-500 text-base font-medium mb-2">Reen Bank</p>
+
+            <!-- MAIN HEADING -->
+
+            <h1
+              class="text-4xl md:text-5xl lg:text-[46px] leading-[1.12] font-semibold max-w-xl"
+            >
+              Experience
+              <br />
+
+              hassle-free banking
+            </h1>
+
+            <!-- DESCRIPTION -->
+
+            <p class="text-sm text-gray-600 leading-6 max-w-md mt-5">
+              Experience simple, secure, and stress-free banking. Say goodbye to
+              long queues and complex procedures and hello to hassle-free
+              banking with Reen Bank.
+            </p>
+
+            <!-- SOCIAL MEDIA -->
+
+            <div class="flex items-center gap-3 mt-10">
+              <a
+                href="#"
+                class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold"
+              >
+                f
+              </a>
+
+              <a
+                href="#"
+                class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold"
+              >
+                ◎
+              </a>
+
+              <a
+                href="#"
+                class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold"
+              >
+                t
+              </a>
+            </div>
+          </div>
+
+          <!-- =========================
+                     RIGHT SIDE
+                ========================== -->
+
+          <div class="flex justify-center lg:justify-end">
+            <!-- OTP CARD -->
+
+            <div
+              class="bg-white w-full max-w-[455px] rounded-2xl px-10 py-10 shadow-sm"
+            >
+              <!-- TITLE -->
+
+              <h2 class="text-2xl font-semibold text-emerald-500 mb-7">
+                Email Verification
+              </h2>
+
+              <!-- EMAIL MESSAGE -->
+
+              <p class="text-[9px] text-gray-400 mb-4">
+                A 6-digit code has been sent to your email us****me@gmail.com
+
+                <a
+                  href="Register page.html"
+                  class="text-emerald-500 font-medium"
+                >
+                  Change
+                </a>
+              </p>
+
+              <!-- =========================
+                             OTP INPUTS
+                        ========================== -->
+
+              <div class="flex justify-between gap-3">
+                <input
+                  type="text"
+                  maxlength="1"
+                  class="otp-input"
+                  inputmode="numeric"
+                />
+
+                <input
+                  type="text"
+                  maxlength="1"
+                  class="otp-input"
+                  inputmode="numeric"
+                />
+
+                <input
+                  type="text"
+                  maxlength="1"
+                  class="otp-input"
+                  inputmode="numeric"
+                />
+
+                <input
+                  type="text"
+                  maxlength="1"
+                  class="otp-input"
+                  inputmode="numeric"
+                />
+
+                <input
+                  type="text"
+                  maxlength="1"
+                  class="otp-input"
+                  inputmode="numeric"
+                />
+
+                <input
+                  type="text"
+                  maxlength="1"
+                  class="otp-input"
+                  inputmode="numeric"
+                />
+              </div>
+
+              <!-- TIMER -->
+
+              <p id="otpTimer" class="text-emerald-500 text-[9px] mt-3">
+                0:45 remaining
+              </p>
+
+              <!-- VERIFY BUTTON -->
+
+              <button
+                id="verifyOTP"
+                type="button"
+                class="w-full h-10 mt-5 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold rounded-md transition"
+              >
+                Verify Email
+              </button>
+
+              <!-- RESEND -->
+
+              <p class="text-[9px] text-gray-400 mt-4">
+                Didn't receive the code?
+
+                <button
+                  id="resendOTP"
+                  type="button"
+                  class="text-emerald-500 font-medium ml-1"
+                >
+                  Resend
+                </button>
+              </p>
+
+              <!-- ERROR / SUCCESS MESSAGE -->
+
+              <p id="otpMessage" class="text-xs mt-3"></p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </main>
+
+    <script src="./script.js"></script>
+  </body>
+</html>

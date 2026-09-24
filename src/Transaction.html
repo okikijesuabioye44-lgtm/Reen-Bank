@@ -1,0 +1,422 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Transactions - Reen Bank</title>
+
+    <!-- Tailwind CSS -->
+    <link rel="stylesheet" href="./output.css" />
+  </head>
+
+  <body class="min-h-screen bg-[#f3fbf8] text-gray-800">
+    <!-- BACKGROUND PATTERN -->
+    <div class="fixed inset-0 opacity-[0.10] pointer-events-none">
+      <img
+        src="./images/bank-pattern.png"
+        alt=""
+        class="w-full h-full object-cover"
+      />
+    </div>
+
+    <!-- =========================
+         MAIN PAGE
+    ========================== -->
+
+    <div class="relative z-10 min-h-screen max-w-[1250px] mx-auto">
+      <!-- =========================
+             HEADER
+        ========================== -->
+
+      <header class="h-[110px] px-8 flex items-center justify-between">
+        <!-- LOGO -->
+
+        <div class="flex items-center gap-3">
+          <div
+            class="w-10 h-10 border-2 border-gray-800 rounded-md flex items-center justify-center"
+          >
+            <span class="text-2xl font-bold text-emerald-500"> rb </span>
+          </div>
+
+          <span class="text-[22px] font-semibold"> Reen Bank </span>
+        </div>
+
+        <!-- PAGE TITLE -->
+
+        <h1 class="text-[28px] font-semibold mr-auto ml-16">Transactions</h1>
+
+        <!-- USER DETAILS -->
+
+        <div class="flex items-center gap-8">
+          <!-- NAME + ACCOUNT -->
+
+          <div class="text-center">
+            <p class="text-[9px] text-emerald-500">Maureen Oguche</p>
+
+            <p class="text-[20px] font-semibold leading-none mt-1">
+              1234567890
+            </p>
+          </div>
+
+          <!-- SEARCH -->
+
+          <div class="hidden md:flex items-center gap-2 text-gray-500">
+            <span class="text-xl"> ⌕ </span>
+
+            <input
+              type="text"
+              placeholder="Search"
+              class="w-[70px] bg-transparent outline-none text-[9px] placeholder:text-gray-400"
+            />
+          </div>
+
+          <!-- NOTIFICATION -->
+
+          <button class="text-xl text-gray-600">♧</button>
+
+          <!-- PROFILE -->
+
+          <div class="w-9 h-9 rounded-full overflow-hidden bg-gray-300">
+            <img
+              src="./images/profile.jpg"
+              alt="Profile"
+              class="w-full h-full object-cover"
+            />
+          </div>
+        </div>
+      </header>
+
+      <!-- =========================
+             BODY
+        ========================== -->
+
+      <div class="grid grid-cols-[180px_1fr] gap-8 px-8">
+        <!-- =========================
+                 SIDEBAR
+            ========================== -->
+
+        <aside class="min-h-[650px] flex flex-col">
+          <nav class="mt-8 space-y-3">
+            <!-- OVERVIEW -->
+
+            <a
+              href="dashboard.html"
+              class="flex items-center gap-5 px-3 py-3 text-gray-600 text-[12px] hover:text-emerald-500"
+            >
+              <span class="text-[22px]"> ▦ </span>
+
+              Overview
+            </a>
+
+            <!-- ACCOUNTS -->
+
+            <a
+              href="accounts.html"
+              class="flex items-center gap-5 px-3 py-3 text-gray-600 text-[12px] hover:text-emerald-500"
+            >
+              <span class="text-[22px]"> ▰ </span>
+
+              Accounts
+            </a>
+
+            <!-- TRANSACTIONS -->
+
+            <a
+              href="transactions.html"
+              class="flex items-center gap-5 px-3 py-3 text-emerald-500 text-[12px] font-medium"
+            >
+              <span class="text-[22px]"> ↔ </span>
+
+              Transactions
+            </a>
+
+            <!-- PROFILE -->
+
+            <a
+              href="profile.html"
+              class="flex items-center gap-5 px-3 py-3 text-gray-600 text-[12px] hover:text-emerald-500"
+            >
+              <span class="text-[22px]"> ♙ </span>
+
+              Profile
+            </a>
+          </nav>
+
+          <!-- LOGOUT -->
+
+          <a
+            href="login.html"
+            class="mt-auto mb-8 flex items-center gap-5 px-3 py-3 text-gray-600 text-[12px]"
+          >
+            <span class="text-[22px]"> ← </span>
+
+            Logout
+          </a>
+        </aside>
+
+        <!-- =========================
+                 MAIN CONTENT
+            ========================== -->
+
+        <main class="pt-8 pb-12">
+          <!-- =========================
+                     ACCOUNT CARDS
+                ========================== -->
+
+          <div class="grid grid-cols-3 gap-14 mb-16">
+            <!-- MAIN ACCOUNT -->
+
+            <div
+              class="relative bg-[#cef3e4] rounded-lg h-[85px] px-6 py-5 border-l-[5px] border-purple-700"
+            >
+              <!-- HIDE BALANCE -->
+
+              <button class="absolute right-5 top-5 text-gray-600 text-[11px]">
+                ◉
+              </button>
+
+              <p class="text-[10px] text-purple-800 font-medium">
+                Main Account
+              </p>
+
+              <p class="text-[17px] font-semibold mt-1">₦ 44,500.00</p>
+            </div>
+
+            <!-- SCHOOL SAVINGS -->
+
+            <div class="relative bg-[#cef3e4] rounded-lg h-[85px] px-6 py-5">
+              <button class="absolute right-5 top-5 text-gray-600 text-[11px]">
+                ◉
+              </button>
+
+              <p class="text-[10px] text-purple-800 font-medium">
+                School Savings
+              </p>
+
+              <p class="text-[17px] font-semibold mt-1">₦ 44,500.00</p>
+            </div>
+
+            <!-- HOLIDAY PLAN -->
+
+            <div class="relative bg-[#cef3e4] rounded-lg h-[85px] px-6 py-5">
+              <button class="absolute right-5 top-5 text-gray-600 text-[11px]">
+                ◉
+              </button>
+
+              <p class="text-[10px] text-purple-800 font-medium">
+                Holiday Plan
+              </p>
+
+              <p class="text-[17px] font-semibold mt-1">₦ 44,500.00</p>
+            </div>
+          </div>
+
+          <!-- =========================
+                     TRANSACTIONS
+                ========================== -->
+
+          <section>
+            <!-- TRANSACTION ROW 1 -->
+
+            <div
+              class="grid grid-cols-[45px_1.3fr_1fr_1fr_110px_135px] items-center gap-4 py-2.5 border-b border-gray-200"
+            >
+              <!-- MINUS -->
+
+              <div
+                class="w-7 h-7 rounded-full bg-red-500 text-white flex items-center justify-center text-lg"
+              >
+                −
+              </div>
+
+              <!-- NAME -->
+
+              <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
+
+              <!-- TYPE -->
+
+              <p class="text-[10px] text-gray-400">Bank Transfer</p>
+
+              <!-- DATE -->
+
+              <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
+
+              <!-- AMOUNT -->
+
+              <p class="text-[10px] text-red-500 font-medium">- 10,000.00</p>
+
+              <!-- STATUS -->
+
+              <span
+                class="bg-gray-300 text-gray-600 text-[9px] text-center py-2 rounded-md"
+              >
+                Pending
+              </span>
+            </div>
+
+            <!-- TRANSACTION ROW 2 -->
+
+            <div
+              class="grid grid-cols-[45px_1.3fr_1fr_1fr_110px_135px] items-center gap-4 py-2.5 border-b border-gray-200"
+            >
+              <div
+                class="w-7 h-7 rounded-full bg-[#31bb88] text-white flex items-center justify-center text-lg"
+              >
+                +
+              </div>
+
+              <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
+
+              <p class="text-[10px] text-gray-400">Direct Pay</p>
+
+              <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
+
+              <p class="text-[10px] text-[#31bb88] font-medium">+ 10,000.00</p>
+
+              <span
+                class="bg-[#31bb88] text-white text-[9px] text-center py-2 rounded-md"
+              >
+                Completed
+              </span>
+            </div>
+
+            <!-- TRANSACTION ROW 3 -->
+
+            <div
+              class="grid grid-cols-[45px_1.3fr_1fr_1fr_110px_135px] items-center gap-4 py-2.5 border-b border-gray-200"
+            >
+              <div
+                class="w-7 h-7 rounded-full bg-red-500 text-white flex items-center justify-center text-lg"
+              >
+                −
+              </div>
+
+              <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
+
+              <p class="text-[10px] text-gray-400">Bank Transfer</p>
+
+              <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
+
+              <p class="text-[10px] text-red-500 font-medium">- 10,000.00</p>
+
+              <span
+                class="bg-[#ef5361] text-white text-[9px] text-center py-2 rounded-md"
+              >
+                Canceled
+              </span>
+            </div>
+
+            <!-- TRANSACTION ROW 4 -->
+
+            <div
+              class="grid grid-cols-[45px_1.3fr_1fr_1fr_110px_135px] items-center gap-4 py-2.5 border-b border-gray-200"
+            >
+              <div
+                class="w-7 h-7 rounded-full bg-[#31bb88] text-white flex items-center justify-center text-lg"
+              >
+                +
+              </div>
+
+              <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
+
+              <p class="text-[10px] text-gray-400">Credit Card</p>
+
+              <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
+
+              <p class="text-[10px] text-[#31bb88] font-medium">+ 10,000.00</p>
+
+              <span
+                class="bg-[#31bb88] text-white text-[9px] text-center py-2 rounded-md"
+              >
+                Completed
+              </span>
+            </div>
+
+            <!-- TRANSACTION ROW 5 -->
+
+            <div
+              class="grid grid-cols-[45px_1.3fr_1fr_1fr_110px_135px] items-center gap-4 py-2.5 border-b border-gray-200"
+            >
+              <div
+                class="w-7 h-7 rounded-full bg-red-500 text-white flex items-center justify-center text-lg"
+              >
+                −
+              </div>
+
+              <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
+
+              <p class="text-[10px] text-gray-400">Bank Transfer</p>
+
+              <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
+
+              <p class="text-[10px] text-red-500 font-medium">- 10,000.00</p>
+
+              <span
+                class="bg-gray-300 text-gray-600 text-[9px] text-center py-2 rounded-md"
+              >
+                Pending
+              </span>
+            </div>
+
+            <!-- TRANSACTION ROW 6 -->
+
+            <div
+              class="grid grid-cols-[45px_1.3fr_1fr_1fr_110px_135px] items-center gap-4 py-2.5 border-b border-gray-200"
+            >
+              <div
+                class="w-7 h-7 rounded-full bg-[#31bb88] text-white flex items-center justify-center text-lg"
+              >
+                +
+              </div>
+
+              <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
+
+              <p class="text-[10px] text-gray-400">Direct Pay</p>
+
+              <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
+
+              <p class="text-[10px] text-[#31bb88] font-medium">+ 10,000.00</p>
+
+              <span
+                class="bg-[#31bb88] text-white text-[9px] text-center py-2 rounded-md"
+              >
+                Completed
+              </span>
+            </div>
+
+            <!-- TRANSACTION ROW 7 -->
+
+            <div
+              class="grid grid-cols-[45px_1.3fr_1fr_1fr_110px_135px] items-center gap-4 py-2.5"
+            >
+              <div
+                class="w-7 h-7 rounded-full bg-red-500 text-white flex items-center justify-center text-lg"
+              >
+                −
+              </div>
+
+              <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
+
+              <p class="text-[10px] text-gray-400">Bank Transfer</p>
+
+              <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
+
+              <p class="text-[10px] text-red-500 font-medium">- 10,000.00</p>
+
+              <span
+                class="bg-[#ef5361] text-white text-[9px] text-center py-2 rounded-md"
+              >
+                Canceled
+              </span>
+            </div>
+          </section>
+        </main>
+      </div>
+    </div>
+
+    
+    <script src="./script.js"></script>
+  </body>
+</html>

@@ -712,7 +712,7 @@ function verifyOTP() {
 // ==========================================================
 
 function goToLogin() {
-  window.location.href = "Login page.html";
+  window.location.href = "login page.html";
 }
 
 // ==========================================================

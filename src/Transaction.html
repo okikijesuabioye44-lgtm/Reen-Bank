@@ -7,416 +7,1193 @@
 
     <title>Transactions - Reen Bank</title>
 
-    <!-- Tailwind CSS -->
     <link rel="stylesheet" href="./output.css" />
+
+    <style>
+      /* =====================================================
+       PAGE
+    ===================================================== */
+
+      * {
+        box-sizing: border-box;
+      }
+
+      body {
+        margin: 0;
+        font-family: Arial, Helvetica, sans-serif;
+        background: #f5fbf9;
+        color: #252525;
+      }
+
+      /* =====================================================
+       BACKGROUND PATTERN
+    ===================================================== */
+
+      .page-background {
+        position: fixed;
+        inset: 0;
+        pointer-events: none;
+        z-index: 0;
+        opacity: 0.22;
+
+        background-image:
+          radial-gradient(
+            circle at 10% 15%,
+            rgba(45, 184, 137, 0.08) 0 20px,
+            transparent 21px
+          ),
+          radial-gradient(
+            circle at 85% 25%,
+            rgba(45, 184, 137, 0.06) 0 25px,
+            transparent 26px
+          ),
+          radial-gradient(
+            circle at 45% 75%,
+            rgba(45, 184, 137, 0.05) 0 22px,
+            transparent 23px
+          );
+
+        background-size: 190px 190px;
+      }
+
+      /* =====================================================
+       SIDEBAR
+    ===================================================== */
+
+      #sidebar {
+        width: 220px;
+        min-width: 220px;
+        height: 100vh;
+        position: fixed;
+        left: 0;
+        top: 0;
+        z-index: 50;
+        background: transparent;
+      }
+
+      /* =====================================================
+       MAIN
+    ===================================================== */
+
+      .transaction-main {
+        margin-left: 220px;
+        min-height: 100vh;
+        position: relative;
+        z-index: 1;
+      }
+
+      /* =====================================================
+       HEADER
+    ===================================================== */
+
+      .transaction-header {
+        height: 105px;
+        display: flex;
+        align-items: center;
+        padding: 0 48px;
+      }
+
+      /* =====================================================
+       DESKTOP CONTENT
+    ===================================================== */
+
+      .transaction-content {
+        width: 100%;
+        max-width: 820px;
+        padding: 35px 48px 80px 46px;
+      }
+
+      /* =====================================================
+       TRANSACTION ROW
+    ===================================================== */
+
+      .transaction-row {
+        animation: transactionFade 0.35s ease forwards;
+      }
+
+      @keyframes transactionFade {
+        from {
+          opacity: 0;
+          transform: translateY(4px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      /* =====================================================
+       MOBILE
+    ===================================================== */
+
+      @media (max-width: 1023px) {
+        #sidebar {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+          background: white;
+          box-shadow: 10px 0 30px rgba(0, 0, 0, 0.08);
+        }
+
+        #sidebar.mobile-open {
+          transform: translateX(0);
+        }
+
+        .transaction-main {
+          margin-left: 0;
+        }
+
+        .transaction-header {
+          height: 85px;
+          padding: 0 20px;
+        }
+
+        .transaction-content {
+          max-width: none;
+          padding: 25px 20px 60px;
+        }
+      }
+
+      /* =====================================================
+       SMALL SCREEN
+    ===================================================== */
+
+      @media (max-width: 640px) {
+        .transaction-content {
+          padding-left: 15px;
+          padding-right: 15px;
+        }
+      }
+
+      /* =====================================================
+       SCROLLBAR
+    ===================================================== */
+
+      ::-webkit-scrollbar {
+        width: 5px;
+        height: 5px;
+      }
+
+      ::-webkit-scrollbar-thumb {
+        background: #c8ddd6;
+        border-radius: 10px;
+      }
+
+      ::-webkit-scrollbar-track {
+        background: transparent;
+      }
+
+      /* =========================================================
+   REEN BANK - LARGE / PERFECT TRANSACTIONS UI
+   Paste this at the END of your <style>
+========================================================= */
+
+      /* =========================================================
+   SIDEBAR
+========================================================= */
+
+      /* =========================================================
+   REEN BANK SIDEBAR
+   MATCHES THE SECOND SCREENSHOT
+========================================================= */
+
+      .reen-sidebar {
+        position: fixed;
+
+        left: 0;
+        top: 0;
+
+        width: 300px;
+        height: 100vh;
+
+        background: #f5fbf9;
+
+        z-index: 100;
+
+        display: flex;
+        flex-direction: column;
+
+        align-items: center;
+
+        padding-top: 78px;
+
+        border-right: none;
+      }
+
+      /* =========================================================
+   LOGO
+========================================================= */
+
+      .reen-logo {
+        display: flex;
+
+        align-items: center;
+
+        justify-content: center;
+
+        gap: 10px;
+
+        text-decoration: none;
+
+        margin: 0;
+
+        width: 100%;
+      }
+
+      .reen-logo-box {
+        width: 35px;
+        height: 35px;
+
+        border: 2px solid #292929;
+
+        border-radius: 5px;
+
+        background: #d4f4e8;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+
+        font-size: 20px;
+
+        font-weight: 700;
+
+        color: #ef5260;
+      }
+
+      .reen-logo-box span {
+        color: #2db889;
+      }
+
+      .reen-logo-text {
+        font-size: 25px;
+
+        font-weight: 700;
+
+        color: #292929;
+      }
+
+      /* =========================================================
+   NAVIGATION
+========================================================= */
+
+      .reen-nav {
+        width: 100%;
+
+        margin: 70px 0 0 0;
+
+        padding: 0 30px;
+
+        display: flex;
+
+        flex-direction: column;
+
+        gap: 14px;
+      }
+
+      /* EACH NAV LINK */
+
+      .reen-nav a {
+        width: 100%;
+
+        height: 60px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 22px;
+
+        padding: 0 48px;
+
+        border-radius: 15px;
+
+        text-decoration: none;
+
+        color: #687583;
+
+        font-size: 18px;
+
+        font-weight: 400;
+
+        transition:
+          background 0.2s ease,
+          color 0.2s ease,
+          transform 0.2s ease;
+      }
+
+      /* HOVER */
+
+      .reen-nav a:hover {
+        background: #e9f9f3;
+
+        color: #2db889;
+      }
+
+      /* ACTIVE */
+
+      .reen-nav a.active {
+        background: #e2f7ef;
+
+        color: #2db889;
+
+        font-weight: 600;
+      }
+
+      /* =========================================================
+   NAV ICON
+========================================================= */
+
+      .reen-nav-icon {
+        width: 25px;
+        height: 25px;
+
+        flex-shrink: 0;
+
+        display: flex;
+
+        align-items: center;
+        justify-content: center;
+      }
+
+      .reen-nav-icon svg {
+        width: 24px;
+        height: 24px;
+
+        stroke: currentColor;
+
+        fill: none;
+
+        stroke-width: 1.7;
+
+        stroke-linecap: round;
+
+        stroke-linejoin: round;
+      }
+
+      /* =========================================================
+   LOGOUT
+========================================================= */
+
+      .reen-logout {
+        position: absolute;
+
+        left: 0;
+
+        bottom: 50px;
+
+        width: 100%;
+
+        height: 55px;
+
+        padding-left: 48px;
+
+        display: flex;
+
+        align-items: center;
+
+        gap: 22px;
+
+        border: none;
+
+        background: transparent;
+
+        color: #687583;
+
+        font-size: 18px;
+
+        cursor: pointer;
+
+        text-align: left;
+
+        transition: 0.2s ease;
+      }
+
+      .reen-logout:hover {
+        color: #ef5260;
+      }
+
+      .reen-logout .reen-nav-icon {
+        width: 25px;
+        height: 25px;
+      }
+
+      /* =========================================================
+   MAIN CONTENT
+   MUST START AFTER THE SIDEBAR
+========================================================= */
+
+      .reen-main {
+        margin-left: 300px;
+
+        min-height: 100vh;
+      }
+
+      /* =========================================================
+   MOBILE
+========================================================= */
+
+      @media (max-width: 900px) {
+        .reen-sidebar {
+          width: 300px;
+
+          transform: translateX(-100%);
+
+          transition: transform 0.3s ease;
+
+          box-shadow: 8px 0 30px rgba(0, 0, 0, 0.08);
+        }
+
+        .reen-sidebar.open {
+          transform: translateX(0);
+        }
+
+        .reen-main {
+          margin-left: 0;
+        }
+      }
+
+      /* =========================================================
+   MAIN
+========================================================= */
+
+      .transaction-main {
+        margin-left: 255px !important;
+      }
+
+      /* =========================================================
+   HEADER
+========================================================= */
+
+      .transaction-header {
+        height: 125px !important;
+
+        padding-left: 55px !important;
+        padding-right: 55px !important;
+      }
+
+      /* PAGE TITLE */
+
+      .transaction-header h1 {
+        font-size: 32px !important;
+        font-weight: 700 !important;
+      }
+
+      /* USER NAME */
+
+      #headerUserName {
+        font-size: 12px !important;
+        margin-bottom: 5px !important;
+      }
+
+      /* ACCOUNT NUMBER */
+
+      #headerAccountNumber {
+        font-size: 25px !important;
+      }
+
+      /* SEARCH */
+
+      .transaction-header button img {
+        width: 21px !important;
+        height: 21px !important;
+      }
+
+      .transaction-header button span {
+        font-size: 12px !important;
+      }
+
+      /* NOTIFICATION */
+
+      #notificationButton {
+        width: 32px !important;
+        height: 32px !important;
+        margin-right: 25px !important;
+      }
+
+      #notificationButton img {
+        width: 22px !important;
+        height: 22px !important;
+      }
+
+      /* PROFILE IMAGE */
+
+      #headerProfileImage {
+        width: 43px !important;
+        height: 43px !important;
+      }
+
+      .transaction-header > a {
+        width: 43px !important;
+        height: 43px !important;
+      }
+
+      /* =========================================================
+   MAIN CONTENT
+========================================================= */
+
+      .transaction-content {
+        max-width: 1100px !important;
+
+        padding-top: 35px !important;
+        padding-left: 55px !important;
+        padding-right: 30px !important;
+        padding-bottom: 100px !important;
+      }
+
+      /* =========================================================
+   ACCOUNT CARDS
+========================================================= */
+
+      .transaction-accounts {
+        width: 100% !important;
+
+        display: grid !important;
+
+        grid-template-columns: repeat(3, 280px) !important;
+
+        column-gap: 65px !important;
+
+        row-gap: 25px !important;
+      }
+
+      /* ACCOUNT CARD */
+
+      .transaction-account-card {
+        width: 280px !important;
+        height: 92px !important;
+
+        border-radius: 10px !important;
+
+        padding: 21px 25px !important;
+      }
+
+      /* FIRST CARD */
+
+      .transaction-account-card.first-card {
+        border-left-width: 6px !important;
+
+        padding-left: 20px !important;
+      }
+
+      /* ACCOUNT NAME */
+
+      .transaction-account-name {
+        font-size: 13px !important;
+
+        margin-bottom: 6px !important;
+      }
+
+      /* ACCOUNT BALANCE */
+
+      .transaction-account-balance {
+        font-size: 22px !important;
+
+        font-weight: 700 !important;
+      }
+
+      /* ACCOUNT EYE */
+
+      .transaction-eye {
+        width: 18px !important;
+        height: 18px !important;
+
+        top: 24px !important;
+        right: 20px !important;
+      }
+
+      .transaction-eye svg {
+        width: 18px !important;
+        height: 18px !important;
+      }
+
+      /* =========================================================
+   TRANSACTION TABLE
+========================================================= */
+
+      .transaction-table {
+        width: 100% !important;
+
+        margin-top: 65px !important;
+      }
+
+      /* =========================================================
+   TRANSACTION ROW
+========================================================= */
+
+      .transaction-row {
+        width: 100% !important;
+
+        min-height: 55px !important;
+        height: 55px !important;
+
+        display: grid !important;
+
+        grid-template-columns:
+          65px
+          185px
+          165px
+          190px
+          150px
+          160px !important;
+
+        align-items: center !important;
+
+        border-bottom: 1px solid #d7e2de !important;
+      }
+
+      /* =========================================================
+   PLUS / MINUS CIRCLE
+========================================================= */
+
+      .transaction-symbol {
+        width: 34px !important;
+        height: 34px !important;
+
+        border-radius: 50% !important;
+
+        font-size: 24px !important;
+
+        font-weight: 400 !important;
+      }
+
+      /* =========================================================
+   TRANSACTION TEXT
+========================================================= */
+
+      .transaction-cell {
+        padding-right: 15px !important;
+
+        font-size: 13px !important;
+
+        line-height: 1.3 !important;
+      }
+
+      /* =========================================================
+   AMOUNT
+========================================================= */
+
+      .transaction-amount {
+        font-size: 14px !important;
+
+        font-weight: 600 !important;
+      }
+
+      /* =========================================================
+   STATUS
+========================================================= */
+
+      .transaction-status {
+        width: 145px !important;
+        height: 32px !important;
+
+        border-radius: 6px !important;
+
+        font-size: 11px !important;
+
+        font-weight: 600 !important;
+      }
+
+      /* =========================================================
+   EMPTY TRANSACTION
+========================================================= */
+
+      .transaction-empty {
+        width: 100% !important;
+
+        padding: 70px 0 !important;
+
+        font-size: 15px !important;
+      }
+
+      /* =========================================================
+   NOTIFICATION PANEL
+========================================================= */
+
+      #notificationPanel {
+        top: 95px !important;
+
+        right: 55px !important;
+
+        width: 380px !important;
+
+        border-radius: 18px !important;
+      }
+
+      /* NOTIFICATION HEADER */
+
+      .notification-panel-header {
+        padding: 20px 22px !important;
+      }
+
+      .notification-panel-header h3 {
+        font-size: 17px !important;
+      }
+
+      .notification-panel-header button {
+        font-size: 12px !important;
+      }
+
+      /* NOTIFICATION CONTENT */
+
+      #notificationsList {
+        max-height: 430px !important;
+      }
+
+      /* =========================================================
+   BACKGROUND
+========================================================= */
+
+      .page-background {
+        opacity: 0.18 !important;
+
+        background-size: 220px 220px !important;
+      }
+
+      /* =========================================================
+   LARGE LAPTOP / DESKTOP
+========================================================= */
+
+      @media (min-width: 1400px) {
+        .transaction-main {
+          margin-left: 275px !important;
+        }
+
+        #sidebar {
+          width: 275px !important;
+          min-width: 275px !important;
+        }
+
+        .transaction-header {
+          padding-left: 60px !important;
+          padding-right: 70px !important;
+        }
+
+        .transaction-header h1 {
+          font-size: 34px !important;
+        }
+
+        .transaction-content {
+          max-width: 1150px !important;
+
+          padding-left: 60px !important;
+        }
+
+        .transaction-accounts {
+          grid-template-columns: repeat(3, 290px) !important;
+
+          column-gap: 70px !important;
+        }
+
+        .transaction-account-card {
+          width: 290px !important;
+          height: 96px !important;
+        }
+
+        .transaction-row {
+          min-height: 58px !important;
+          height: 58px !important;
+
+          grid-template-columns:
+            70px
+            200px
+            180px
+            205px
+            160px
+            170px !important;
+        }
+
+        .transaction-symbol {
+          width: 36px !important;
+          height: 36px !important;
+
+          font-size: 25px !important;
+        }
+
+        .transaction-cell {
+          font-size: 14px !important;
+        }
+
+        .transaction-amount {
+          font-size: 15px !important;
+        }
+
+        .transaction-status {
+          width: 155px !important;
+          height: 34px !important;
+
+          font-size: 12px !important;
+        }
+      }
+
+      /* =========================================================
+   TABLET
+========================================================= */
+
+      @media (max-width: 1200px) {
+        .transaction-accounts {
+          grid-template-columns: repeat(2, 280px) !important;
+        }
+
+        .transaction-table {
+          overflow-x: auto !important;
+        }
+
+        .transaction-row {
+          min-width: 900px !important;
+        }
+      }
+
+      /* =========================================================
+   MOBILE
+========================================================= */
+
+      @media (max-width: 900px) {
+        #sidebar {
+          width: 255px !important;
+
+          transform: translateX(-100%);
+        }
+
+        #sidebar.mobile-open {
+          transform: translateX(0);
+        }
+
+        .transaction-main {
+          margin-left: 0 !important;
+        }
+
+        .transaction-header {
+          height: 95px !important;
+
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+
+        .transaction-content {
+          width: 100% !important;
+
+          padding-left: 20px !important;
+          padding-right: 20px !important;
+        }
+
+        .transaction-accounts {
+          grid-template-columns: repeat(2, 280px) !important;
+        }
+      }
+
+      /* =========================================================
+   SMALL MOBILE
+========================================================= */
+
+      @media (max-width: 650px) {
+        .transaction-accounts {
+          grid-template-columns: 1fr !important;
+        }
+
+        .transaction-account-card {
+          width: 100% !important;
+          max-width: 320px !important;
+        }
+
+        .transaction-header h1 {
+          font-size: 25px !important;
+        }
+
+        #headerUserName,
+        #headerAccountNumber {
+          display: none !important;
+        }
+      }
+    </style>
   </head>
 
-  <body class="min-h-screen bg-[#f3fbf8] text-gray-800">
-    <!-- BACKGROUND PATTERN -->
-    <div class="fixed inset-0 opacity-[0.10] pointer-events-none">
-      <img
-        src="./images/bank-pattern.png"
-        alt=""
-        class="w-full h-full object-cover"
-      />
-    </div>
+  <body>
+    <!-- BACKGROUND -->
 
-    <!-- =========================
-         MAIN PAGE
-    ========================== -->
+    <div class="page-background"></div>
 
-    <div class="relative z-10 min-h-screen max-w-[1250px] mx-auto">
-      <!-- =========================
-             HEADER
-        ========================== -->
+    <!-- =====================================================
+       SIDEBAR
+  ====================================================== -->
+    <aside
+      id="sidebar"
+      class="sidebar fixed left-0 top-0 z-40 w-[240px] h-screen bg-white border-r border-gray-100 px-6 py-7 lg:translate-x-0"
+    >
+      <!-- LOGO -->
 
-      <header class="h-[110px] px-8 flex items-center justify-between">
-        <!-- LOGO -->
+      <div class="flex items-center gap-3 mb-14">
+        <img
+          src="/src/images/logo.png"
+          alt="Reen Bank Logo"
+          class="w- h-auto object-contain"
+        />
 
-        <div class="flex items-center gap-3">
-          <div
-            class="w-10 h-10 border-2 border-gray-800 rounded-md flex items-center justify-center"
-          >
-            <span class="text-2xl font-bold text-emerald-500"> rb </span>
-          </div>
+        <h1 class="text-xl font-bold"></h1>
+      </div>
 
-          <span class="text-[22px] font-semibold"> Reen Bank </span>
-        </div>
+      <!-- NAVIGATION -->
+
+      <nav class="space-y-3">
+        <!-- OVERVIEW -->
+
+        <a
+          href="Dashboard.html"
+          class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-500 hover:bg-[#e9f9f3] hover:text-[#2db889] transition-all duration-300 hover:translate-x-1"
+        >
+          <img
+            src="/src/images/fi-sr-apps.png"
+            alt="Overview"
+            class="w-5 h-5"
+          />
+
+          <span> Overview </span>
+        </a>
+
+        <!-- ACCOUNTS -->
+
+        <a
+          href="./Main account.html"
+          class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-500 hover:bg-[#e9f9f3] hover:text-[#2db889] transition-all duration-300 hover:translate-x-1"
+        >
+          <img
+            src="/src/images/fi-rr-credit-card.png"
+            alt="Accounts"
+            class="w-5 h-5"
+          />
+
+          <span> Accounts </span>
+        </a>
+
+        <!-- TRANSACTIONS -->
+
+        <a
+          href="Transaction.html"
+          class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-500 hover:bg-[#e9f9f3] hover:text-[#2db889] transition-all duration-300 hover:translate-x-1"
+        >
+          <img
+            src="/src/images/Group 19.png"
+            alt="Transactions"
+            class="w-5 h-5"
+          />
+
+          <span> Transactions </span>
+        </a>
+
+        <!-- PROFILE -->
+
+        <a
+          href="Profile.html"
+          class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-500 hover:bg-[#e9f9f3] hover:text-[#2db889] transition-all duration-300 hover:translate-x-1"
+        >
+          <img
+            src="/src/images/fi-rr-user (1).png"
+            alt="Profile"
+            class="w-5 h-5"
+          />
+
+          <span> Profile </span>
+        </a>
+      </nav>
+
+      <!-- LOGOUT -->
+
+      <button
+        onclick="logoutUser()"
+        class="absolute bottom-8 left-6 right-6 flex items-center gap-4 px-4 py-3 rounded-xl text-gray-500 hover:bg-red-50 hover:text-red-500 transition-all duration-300"
+      >
+        <a href="Login page.html">
+        <img
+          src="/src/images/fi-rr-arrow-left.png"
+          alt="Logout"
+          class="w-5 h-5 object-contain"
+        />
+
+        <span>Logout</span>
+      </button> 
+      </a>
+    </aside>
+
+    <!-- =====================================================
+       MAIN CONTENT
+  ====================================================== -->
+
+    <main class="transaction-main">
+      <!-- ===================================================
+         HEADER
+    ==================================================== -->
+
+      <header class="transaction-header">
+        
+
+        
 
         <!-- PAGE TITLE -->
 
-        <h1 class="text-[28px] font-semibold mr-auto ml-16">Transactions</h1>
+        <h1 class="text-[24px] font-bold text-[#292929] whitespace-nowrap">
+          Transactions
+        </h1>
 
-        <!-- USER DETAILS -->
+        <!-- SPACER -->
 
-        <div class="flex items-center gap-8">
-          <!-- NAME + ACCOUNT -->
+        <div class="flex-1"></div>
 
-          <div class="text-center">
-            <p class="text-[9px] text-emerald-500">Maureen Oguche</p>
+        <!-- USER INFORMATION -->
 
-            <p class="text-[20px] font-semibold leading-none mt-1">
-              1234567890
-            </p>
-          </div>
+        <div class="hidden sm:block text-right mr-[55px]">
+          <p
+            id="headerUserName"
+            class="text-[9px] text-[#2db889] font-medium mb-0.5"
+          >
+            Maureen Oguche
+          </p>
 
-          <!-- SEARCH -->
-
-          <div class="hidden md:flex items-center gap-2 text-gray-500">
-            <span class="text-xl"> ⌕ </span>
-
-            <input
-              type="text"
-              placeholder="Search"
-              class="w-[70px] bg-transparent outline-none text-[9px] placeholder:text-gray-400"
-            />
-          </div>
-
-          <!-- NOTIFICATION -->
-
-          <button class="text-xl text-gray-600">♧</button>
-
-          <!-- PROFILE -->
-
-          <div class="w-9 h-9 rounded-full overflow-hidden bg-gray-300">
-            <img
-              src="./images/profile.jpg"
-              alt="Profile"
-              class="w-full h-full object-cover"
-            />
-          </div>
+          <p
+            id="profileAccountNumber"
+            class="text-[19px] font-bold leading-none text-[#202020]"
+          >
+            
+          </p>
         </div>
+
+        <!-- SEARCH -->
+
+        <div class="relative flex items-center">
+          <img
+            src="/src/images/magnifying-glass-solid.png"
+            alt="Search"
+            class="absolute left-3 w-5 h-5"
+          />
+
+          <input
+            type="text"
+            id="searchInput"
+            placeholder="Search"
+            class="w-56 h-11 pl-10 pr-4 rounded-xl bg-transparent outline-none text-sm text-gray-700 placeholder-gray-500 focus:bg-white focus:ring-1 focus:ring-[#2db889] transition"
+          />
+        </div>
+
+        <!-- NOTIFICATION -->
+
+        <button
+          id="notificationButton"
+          type="button"
+          onclick="toggleNotifications()"
+          class="relative w-[25px] h-[25px] mr-[22px] flex items-center justify-center"
+        >
+          <img
+            src="/src/images/bell-solid.png"
+            alt="Notifications"
+            class="w-[17px] h-[17px]"
+          />
+
+          <span
+            id="notificationBadge"
+            class="hidden absolute -top-1 right-0 min-w-[13px] h-[13px] px-1 rounded-full bg-[#ef5260] text-white text-[7px] font-bold items-center justify-center"
+          >
+            0
+          </span>
+        </button>
+
+        <!-- PROFILE PHOTO -->
+
+        <a
+          href="./Profile.html"
+          class="w-[32px] h-[32px] rounded-full overflow-hidden bg-[#d4f4e8] block"
+        >
+          <img
+            id="headerProfileImage"
+            src="./Image/profile-image.png"
+            alt="Profile"
+            class="w-full h-full object-cover"
+          />
+        </a>
       </header>
 
-      <!-- =========================
-             BODY
-        ========================== -->
-
-      <div class="grid grid-cols-[180px_1fr] gap-8 px-8">
-        <!-- =========================
-                 SIDEBAR
-            ========================== -->
-
-        <aside class="min-h-[650px] flex flex-col">
-          <nav class="mt-8 space-y-3">
-            <!-- OVERVIEW -->
-
-            <a
-              href="dashboard.html"
-              class="flex items-center gap-5 px-3 py-3 text-gray-600 text-[12px] hover:text-emerald-500"
-            >
-              <span class="text-[22px]"> ▦ </span>
-
-              Overview
-            </a>
-
-            <!-- ACCOUNTS -->
-
-            <a
-              href="accounts.html"
-              class="flex items-center gap-5 px-3 py-3 text-gray-600 text-[12px] hover:text-emerald-500"
-            >
-              <span class="text-[22px]"> ▰ </span>
-
-              Accounts
-            </a>
-
-            <!-- TRANSACTIONS -->
-
-            <a
-              href="transactions.html"
-              class="flex items-center gap-5 px-3 py-3 text-emerald-500 text-[12px] font-medium"
-            >
-              <span class="text-[22px]"> ↔ </span>
-
-              Transactions
-            </a>
-
-            <!-- PROFILE -->
-
-            <a
-              href="profile.html"
-              class="flex items-center gap-5 px-3 py-3 text-gray-600 text-[12px] hover:text-emerald-500"
-            >
-              <span class="text-[22px]"> ♙ </span>
-
-              Profile
-            </a>
-          </nav>
-
-          <!-- LOGOUT -->
-
-          <a
-            href="login.html"
-            class="mt-auto mb-8 flex items-center gap-5 px-3 py-3 text-gray-600 text-[12px]"
-          >
-            <span class="text-[22px]"> ← </span>
-
-            Logout
-          </a>
-        </aside>
-
-        <!-- =========================
-                 MAIN CONTENT
-            ========================== -->
-
-        <main class="pt-8 pb-12">
-          <!-- =========================
-                     ACCOUNT CARDS
-                ========================== -->
-
-          <div class="grid grid-cols-3 gap-14 mb-16">
-            <!-- MAIN ACCOUNT -->
-
-            <div
-              class="relative bg-[#cef3e4] rounded-lg h-[85px] px-6 py-5 border-l-[5px] border-purple-700"
-            >
-              <!-- HIDE BALANCE -->
-
-              <button class="absolute right-5 top-5 text-gray-600 text-[11px]">
-                ◉
-              </button>
-
-              <p class="text-[10px] text-purple-800 font-medium">
-                Main Account
-              </p>
-
-              <p class="text-[17px] font-semibold mt-1">₦ 44,500.00</p>
-            </div>
-
-            <!-- SCHOOL SAVINGS -->
-
-            <div class="relative bg-[#cef3e4] rounded-lg h-[85px] px-6 py-5">
-              <button class="absolute right-5 top-5 text-gray-600 text-[11px]">
-                ◉
-              </button>
-
-              <p class="text-[10px] text-purple-800 font-medium">
-                School Savings
-              </p>
-
-              <p class="text-[17px] font-semibold mt-1">₦ 44,500.00</p>
-            </div>
-
-            <!-- HOLIDAY PLAN -->
-
-            <div class="relative bg-[#cef3e4] rounded-lg h-[85px] px-6 py-5">
-              <button class="absolute right-5 top-5 text-gray-600 text-[11px]">
-                ◉
-              </button>
-
-              <p class="text-[10px] text-purple-800 font-medium">
-                Holiday Plan
-              </p>
-
-              <p class="text-[17px] font-semibold mt-1">₦ 44,500.00</p>
-            </div>
-          </div>
-
-          <!-- =========================
-                     TRANSACTIONS
-                ========================== -->
-
-          <section>
-            <!-- TRANSACTION ROW 1 -->
-
-            <div
-              class="grid grid-cols-[45px_1.3fr_1fr_1fr_110px_135px] items-center gap-4 py-2.5 border-b border-gray-200"
-            >
-              <!-- MINUS -->
-
-              <div
-                class="w-7 h-7 rounded-full bg-red-500 text-white flex items-center justify-center text-lg"
-              >
-                −
-              </div>
-
-              <!-- NAME -->
-
-              <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
-
-              <!-- TYPE -->
-
-              <p class="text-[10px] text-gray-400">Bank Transfer</p>
-
-              <!-- DATE -->
-
-              <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
-
-              <!-- AMOUNT -->
-
-              <p class="text-[10px] text-red-500 font-medium">- 10,000.00</p>
-
-              <!-- STATUS -->
-
-              <span
-                class="bg-gray-300 text-gray-600 text-[9px] text-center py-2 rounded-md"
-              >
-                Pending
-              </span>
-            </div>
-
-            <!-- TRANSACTION ROW 2 -->
-
-            <div
-              class="grid grid-cols-[45px_1.3fr_1fr_1fr_110px_135px] items-center gap-4 py-2.5 border-b border-gray-200"
-            >
-              <div
-                class="w-7 h-7 rounded-full bg-[#31bb88] text-white flex items-center justify-center text-lg"
-              >
-                +
-              </div>
-
-              <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
-
-              <p class="text-[10px] text-gray-400">Direct Pay</p>
-
-              <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
-
-              <p class="text-[10px] text-[#31bb88] font-medium">+ 10,000.00</p>
-
-              <span
-                class="bg-[#31bb88] text-white text-[9px] text-center py-2 rounded-md"
-              >
-                Completed
-              </span>
-            </div>
-
-            <!-- TRANSACTION ROW 3 -->
-
-            <div
-              class="grid grid-cols-[45px_1.3fr_1fr_1fr_110px_135px] items-center gap-4 py-2.5 border-b border-gray-200"
-            >
-              <div
-                class="w-7 h-7 rounded-full bg-red-500 text-white flex items-center justify-center text-lg"
-              >
-                −
-              </div>
-
-              <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
-
-              <p class="text-[10px] text-gray-400">Bank Transfer</p>
-
-              <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
-
-              <p class="text-[10px] text-red-500 font-medium">- 10,000.00</p>
-
-              <span
-                class="bg-[#ef5361] text-white text-[9px] text-center py-2 rounded-md"
-              >
-                Canceled
-              </span>
-            </div>
-
-            <!-- TRANSACTION ROW 4 -->
-
-            <div
-              class="grid grid-cols-[45px_1.3fr_1fr_1fr_110px_135px] items-center gap-4 py-2.5 border-b border-gray-200"
-            >
-              <div
-                class="w-7 h-7 rounded-full bg-[#31bb88] text-white flex items-center justify-center text-lg"
-              >
-                +
-              </div>
-
-              <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
-
-              <p class="text-[10px] text-gray-400">Credit Card</p>
-
-              <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
-
-              <p class="text-[10px] text-[#31bb88] font-medium">+ 10,000.00</p>
-
-              <span
-                class="bg-[#31bb88] text-white text-[9px] text-center py-2 rounded-md"
-              >
-                Completed
-              </span>
-            </div>
-
-            <!-- TRANSACTION ROW 5 -->
-
-            <div
-              class="grid grid-cols-[45px_1.3fr_1fr_1fr_110px_135px] items-center gap-4 py-2.5 border-b border-gray-200"
-            >
-              <div
-                class="w-7 h-7 rounded-full bg-red-500 text-white flex items-center justify-center text-lg"
-              >
-                −
-              </div>
-
-              <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
-
-              <p class="text-[10px] text-gray-400">Bank Transfer</p>
-
-              <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
-
-              <p class="text-[10px] text-red-500 font-medium">- 10,000.00</p>
-
-              <span
-                class="bg-gray-300 text-gray-600 text-[9px] text-center py-2 rounded-md"
-              >
-                Pending
-              </span>
-            </div>
-
-            <!-- TRANSACTION ROW 6 -->
-
-            <div
-              class="grid grid-cols-[45px_1.3fr_1fr_1fr_110px_135px] items-center gap-4 py-2.5 border-b border-gray-200"
-            >
-              <div
-                class="w-7 h-7 rounded-full bg-[#31bb88] text-white flex items-center justify-center text-lg"
-              >
-                +
-              </div>
-
-              <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
-
-              <p class="text-[10px] text-gray-400">Direct Pay</p>
-
-              <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
-
-              <p class="text-[10px] text-[#31bb88] font-medium">+ 10,000.00</p>
-
-              <span
-                class="bg-[#31bb88] text-white text-[9px] text-center py-2 rounded-md"
-              >
-                Completed
-              </span>
-            </div>
-
-            <!-- TRANSACTION ROW 7 -->
-
-            <div
-              class="grid grid-cols-[45px_1.3fr_1fr_1fr_110px_135px] items-center gap-4 py-2.5"
-            >
-              <div
-                class="w-7 h-7 rounded-full bg-red-500 text-white flex items-center justify-center text-lg"
-              >
-                −
-              </div>
-
-              <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
-
-              <p class="text-[10px] text-gray-400">Bank Transfer</p>
-
-              <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
-
-              <p class="text-[10px] text-red-500 font-medium">- 10,000.00</p>
-
-              <span
-                class="bg-[#ef5361] text-white text-[9px] text-center py-2 rounded-md"
-              >
-                Canceled
-              </span>
-            </div>
-          </section>
-        </main>
+      <!-- ===================================================
+         CONTENT
+    ==================================================== -->
+
+      <section class="transaction-content">
+        <!-- =================================================
+           TRANSACTION LIST
+
+           IMPORTANT:
+           Your JavaScript creates the 3 account cards
+           and transaction rows inside this element.
+      ================================================== -->
+
+        <div id="transactionsList" class="w-full"></div>
+      </section>
+    </main>
+
+    <!-- =====================================================
+       NOTIFICATION PANEL
+  ====================================================== -->
+
+    <div
+      id="notificationPanel"
+      class="hidden fixed top-[80px] right-[25px] z-[100] w-[320px] bg-white rounded-2xl shadow-2xl border border-gray-100 overflow-hidden"
+    >
+      <!-- PANEL HEADER -->
+
+      <div
+        class="px-5 py-4 border-b border-gray-100 flex items-center justify-between"
+      >
+        <div>
+          <h3 class="font-bold text-sm">Notifications</h3>
+
+          <p class="text-[10px] text-gray-400 mt-1">Your recent activity</p>
+        </div>
+
+        <button
+          type="button"
+          onclick="clearNotifications()"
+          class="text-[10px] text-[#2db889] font-semibold"
+        >
+          Clear
+        </button>
+      </div>
+
+      <!-- NOTIFICATIONS -->
+
+      <div id="notificationsList" class="max-h-[350px] overflow-y-auto">
+        <div class="py-10 text-center text-xs text-gray-400">
+          No notifications yet.
+        </div>
       </div>
     </div>
 
-    
+    <!-- =====================================================
+       SCRIPT
+  ====================================================== -->
+
     <script src="./script.js"></script>
+
+    <!-- =====================================================
+       PAGE INITIALIZATION
+  ====================================================== -->
+
+    <script>
+      /*
+      Your main script.js already contains the
+      DOMContentLoaded initialization.
+
+      This small section only makes sure the
+      header information is updated if the functions
+      are available.
+    */
+
+      document.addEventListener("DOMContentLoaded", function () {
+        if (typeof loadBankData === "function") {
+          loadBankData();
+        }
+
+        if (typeof renderTransactionsPage === "function") {
+          renderTransactionsPage();
+        }
+      });
+    </script>
   </body>
 </html>

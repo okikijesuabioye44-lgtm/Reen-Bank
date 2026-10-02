@@ -2,6 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
+
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Register - Reen Bank</title>
@@ -12,190 +13,326 @@
 
   <body class="min-h-screen bg-[#d8f5eb]">
     <!-- =========================
-         REGISTER PAGE
-    ========================== -->
+       REGISTER PAGE
+  ========================== -->
 
     <main class="min-h-screen relative overflow-hidden">
-      <!-- MAIN CONTENT -->
+      <!-- =========================
+         MAIN CONTENT
+    ========================== -->
+
       <div
-        class="relative z-10 min-h-screen max-w-7xl mx-auto px-8 lg:px-14 flex items-center"
+        class="relative z-10 min-h-screen max-w-7xl mx-auto px-8 lg:px-14 py-10 flex items-center"
       >
         <div
-          class="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-16 items-center"
+          class="w-full grid grid-cols-1 lg:grid-cols-2 gap-16 lg:gap-24 items-center"
         >
-          <!-- ========
-                     LEFT SIDE
-                =========== -->
+          <!-- =========================
+             LEFT SIDE
+        ========================== -->
+
           <div class="text-gray-800">
             <!-- LOGO -->
-            <a href="Landing page.html" class="flex items-center gap-3 mb-16">
-              <img class="w-40" src="/images/logo.png" alt="" />
+
+            <a href="Landing page.html" class="flex items-center gap-3 mb-14">
+              <img class="w-52 h-auto" src="/images/logo.png" alt="Reen Bank" />
             </a>
 
             <!-- SMALL TITLE -->
-            <p class="text-emerald-500 text-sm font-medium mb-2">Reen Bank</p>
+
+            <p class="text-emerald-500 text-base font-medium mb-3">Reen Bank</p>
 
             <!-- MAIN TITLE -->
+
             <h1
-              class="text-4xl md:text-5xl lg:text-[46px] leading-[1.1] font-semibold max-w-lg"
+              class="text-5xl md:text-6xl lg:text-[60px] leading-[1.08] font-semibold max-w-2xl"
             >
               Experience
               <br />
+
               hassle-free banking
             </h1>
 
-            <p class="text-sm text-gray-600 leading-6 max-w-md mt-5">
+            <!-- DESCRIPTION -->
+
+            <p
+              class="text-base lg:text-lg text-gray-600 leading-7 max-w-xl mt-7"
+            >
               Experience simple, secure, and stress-free banking. Say goodbye to
               long queues and complex procedures and hello to hassle-free
               banking with Reen Bank.
             </p>
 
-            <!-- SOCIAL ICONS -->
-            <div class="flex items-center gap-3 mt-16">
-              <a
-                href="#"
-                class="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center text-[10px] font-bold"
-              >
-                <img src="/images/facebook 2.png" alt="" />
-              </a>
+            <!-- =========================
+               SOCIAL ICONS
+          ========================== -->
+
+            <div class="flex items-center gap-4 mt-14">
+              <!-- FACEBOOK -->
 
               <a
                 href="#"
-                class="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center text-[9px] font-bold"
+                class="w-9 h-9 rounded-full bg-emerald-500 text-white flex items-center justify-center hover:bg-emerald-600 hover:scale-110 transition"
               >
-                <img src="/images/instagram 2.png" alt="" />
+                <img
+                  src="/images/facebook 2.png"
+                  alt="Facebook"
+                  class="w-5 h-5 object-contain"
+                />
               </a>
+
+              <!-- INSTAGRAM -->
 
               <a
                 href="#"
-                class="w-5 h-5 rounded-full bg-emerald-500 text-white flex items-center justify-center text-[9px] font-bold"
+                class="w-9 h-9 rounded-full bg-emerald-500 text-white flex items-center justify-center hover:bg-emerald-600 hover:scale-110 transition"
               >
-                <img src="/images/twitter 2.png" alt="" />
+                <img
+                  src="/images/instagram 2.png"
+                  alt="Instagram"
+                  class="w-5 h-5 object-contain"
+                />
+              </a>
+
+              <!-- TWITTER -->
+
+              <a
+                href="#"
+                class="w-9 h-9 rounded-full bg-emerald-500 text-white flex items-center justify-center hover:bg-emerald-600 hover:scale-110 transition"
+              >
+                <img
+                  src="/images/twitter 2.png"
+                  alt="Twitter"
+                  class="w-5 h-5 object-contain"
+                />
               </a>
             </div>
           </div>
 
           <!-- =========================
-                     REGISTER FORM
-                ========================== -->
+             REGISTER FORM
+        ========================== -->
+
           <div class="flex justify-center lg:justify-end">
             <div
-              class="bg-white w-full max-w-[365px] rounded-2xl px-8 py-8 shadow-sm"
+              class="bg-white w-full max-w-[430px] rounded-3xl px-10 py-10 shadow-lg"
             >
-              <h2 class="text-emerald-500 text-xl font-semibold mb-6">
+              <!-- FORM TITLE -->
+
+              <h2 class="text-emerald-500 text-3xl font-semibold mb-8">
                 Register
               </h2>
 
               <form id="registerForm">
-                <!-- NAME -->
-                <div class="mb-3">
+                <!-- =========================
+                   NAME
+              ========================== -->
+
+                <div class="mb-6">
                   <label
-                    for="name"
-                    class="block text-[9px] font-medium text-gray-800 mb-1"
+                    for="registerName"
+                    class="block text-base font-medium text-gray-800 mb-2"
                   >
                     Name
                   </label>
 
                   <div class="relative">
                     <input
+                      id="registerName"
                       type="text"
-                      id="name"
-                      name="name"
                       placeholder="Enter name here"
-                      class="w-full h-8 border border-gray-300 rounded-md px-3 pr-9 text-[9px] outline-none focus:border-emerald-500"
+                      class="w-full h-12 border border-gray-300 rounded-xl px-4 pr-12 text-base text-gray-800 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition"
                     />
 
+                    <!-- NAME ICON -->
+
                     <span
-                      class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
+                      class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"
                     >
-                      <img src="/images/fi-rr-user (1).png" alt=""
-                    /></span>
+                      <img
+                        src="/images/fi-rr-user (1).png"
+                        alt="Name"
+                        class="w-5 h-5 object-contain"
+                      />
+                    </span>
                   </div>
                 </div>
 
-                <!-- EMAIL -->
-                <div class="mb-3">
+                <!-- =========================
+                   EMAIL
+              ========================== -->
+
+                <div class="mb-6">
                   <label
-                    for="email"
-                    class="block text-[9px] font-medium text-gray-800 mb-1"
+                    for="registerEmail"
+                    class="block text-base font-medium text-gray-800 mb-2"
                   >
                     Email
                   </label>
 
                   <div class="relative">
                     <input
+                      id="registerEmail"
                       type="email"
-                      id="email"
-                      name="email"
                       placeholder="Enter your Email"
-                      class="w-full h-8 border border-gray-300 rounded-md px-3 pr-9 text-[9px] outline-none focus:border-emerald-500"
+                      class="w-full h-12 border border-gray-300 rounded-xl px-4 pr-12 text-base text-gray-800 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition"
                     />
 
+                    <!-- EMAIL ICON -->
+
                     <span
-                      class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
+                      class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"
                     >
-                      <img src="/images/fi-rr-envelope.png" alt="" />
+                      <img
+                        src="/images/fi-rr-envelope.png"
+                        alt="Email"
+                        class="w-5 h-5 object-contain"
+                      />
                     </span>
                   </div>
                 </div>
 
-                <!-- PASSWORD -->
-                <div class="mb-3">
+                <!-- =========================
+                   PASSWORD
+              ========================== -->
+
+                <div class="mb-6">
                   <label
-                    for="password"
-                    class="block text-[9px] font-medium text-gray-800 mb-1"
+                    for="registerPassword"
+                    class="block text-base font-medium text-gray-800 mb-2"
                   >
                     Password
                   </label>
 
                   <div class="relative">
                     <input
+                      id="registerPassword"
                       type="password"
-                      id="password"
-                      name="password"
                       placeholder="Enter your Password"
-                      class="w-full h-8 border border-gray-300 rounded-md px-3 pr-9 text-[9px] outline-none focus:border-emerald-500"
+                      class="w-full h-12 border border-gray-300 rounded-xl px-4 pr-12 text-base text-gray-800 outline-none focus:border-emerald-500 focus:ring-2 focus:ring-emerald-100 transition"
                     />
 
+                    <!-- PASSWORD ICON -->
+
                     <span
-                      class="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400"
+                      class="absolute right-4 top-1/2 -translate-y-1/2 text-gray-400"
                     >
-                      <img src="/images/fi-rr-lock.png" alt="" />
+                      <img
+                        src="/images/fi-rr-lock.png"
+                        alt="Password"
+                        class="w-5 h-5 object-contain"
+                      />
                     </span>
                   </div>
                 </div>
 
-                <div class="flex items-start gap-2 mt-2">
+                <!-- =========================
+                   TERMS
+              ========================== -->
+
+                <div class="flex items-start gap-3 mt-3 mb-6">
                   <input
                     type="checkbox"
                     id="terms"
-                    class="mt-[2px] accent-emerald-500"
+                    class="mt-1 w-4 h-4 accent-emerald-500"
                   />
 
-                  <label for="terms" class="text-[8px] text-gray-400">
+                  <label for="terms" class="text-sm leading-6 text-gray-500">
                     I agree to all the
-                    <a href="#" class="text-emerald-500"> Terms </a>,
-                    <a href="#" class="text-emerald-500"> Privacy Policy </a>
+
+                    <a href="#" class="text-emerald-500 hover:text-emerald-600">
+                      Terms </a
+                    >,
+
+                    <a href="#" class="text-emerald-500 hover:text-emerald-600">
+                      Privacy Policy
+                    </a>
+
                     and
-                    <a href="#" class="text-emerald-500"> Fees </a>.
+
+                    <a href="#" class="text-emerald-500 hover:text-emerald-600">
+                      Fees </a
+                    >.
                   </label>
                 </div>
 
-                <!-- REGISTER BUTTON -->
+                <!-- =========================
+                   REGISTER BUTTON
+              ========================== -->
 
-                <a
-                  href="OTP.html"
-                  class="w-full h-10 bg-[#32b98a] hover:bg-[#27a97d] text-white rounded-md flex items-center justify-center text-xs font-semibold transition"
+                <button
+                  type="button"
+                  onclick="registerUser()"
+                  class="w-full h-12 bg-[#32b98a] hover:bg-[#27a97d] text-white rounded-xl flex items-center justify-center text-base font-semibold transition hover:-translate-y-0.5 hover:shadow-lg"
                 >
                   Register
-                </a>
-                <!-- LOGIN -->
-                <p class="text-[8px] text-gray-400 mt-4">
+                </button>
+
+                <!-- =========================
+                   OTP MODAL
+              ========================== -->
+
+                <div
+                  id="otpModal"
+                  class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm items-center justify-center z-50 px-5"
+                >
+                  <div
+                    class="bg-white w-full max-w-[420px] rounded-3xl p-9 text-center shadow-2xl"
+                  >
+                    <!-- OTP TITLE -->
+
+                    <h2 class="text-3xl font-semibold text-[#31bb88]">
+                      Verify Your Account
+                    </h2>
+
+                    <!-- OTP DESCRIPTION -->
+
+                    <p class="text-gray-500 text-base mt-4">
+                      Enter the OTP sent to your email.
+                    </p>
+
+                    <!-- TEMPORARY OTP DISPLAY -->
+
+                    <p class="text-gray-400 text-sm mt-6">Your OTP:</p>
+
+                    <p
+                      id="otpNumber"
+                      class="text-4xl font-bold text-[#31bb88] mt-2 tracking-widest"
+                    >
+                      ------
+                    </p>
+
+                    <!-- OTP INPUT -->
+
+                    <input
+                      id="otpInput"
+                      type="number"
+                      placeholder="Enter OTP"
+                      class="w-full h-12 border border-gray-300 rounded-xl px-4 mt-6 text-base text-gray-800 outline-none focus:border-[#31bb88] focus:ring-2 focus:ring-[#31bb88]/20 transition"
+                    />
+
+                    <!-- VERIFY BUTTON -->
+
+                    <button
+                      type="button"
+                      onclick="verifyOTP()"
+                      class="w-full h-12 bg-[#31bb88] text-white text-base font-semibold rounded-xl mt-5 hover:bg-[#27a97d] transition hover:-translate-y-0.5 hover:shadow-lg"
+                    >
+                      Verify OTP
+                    </button>
+                  </div>
+                </div>
+
+                <!-- =========================
+                   LOGIN
+              ========================== -->
+
+                <p class="text-sm text-gray-400 mt-6">
                   Already have an Account?
 
                   <a
                     href="Login page.html"
-                    class="text-emerald-500 font-medium"
+                    class="text-emerald-500 font-medium hover:text-emerald-600"
                   >
                     Log in.
                   </a>
@@ -207,6 +344,12 @@
       </div>
     </main>
 
+    <!-- =========================
+       JAVASCRIPT
+  ========================== -->
+
     <script src="./script.js"></script>
+
+    <script src="./Logins.js"></script>
   </body>
 </html>

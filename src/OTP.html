@@ -17,20 +17,8 @@
 
     <main class="min-h-screen relative overflow-hidden">
       <!-- =========================
-             BACKGROUND PATTERN
-        ========================== -->
-
-      <div class="absolute inset-0 opacity-20">
-        <img
-          src="./images/bank-pattern.png"
-          alt=""
-          class="w-full h-full object-cover"
-        />
-      </div>
-
-      <!-- =========================
-             MAIN CONTENT
-        ========================== -->
+           MAIN CONTENT
+      ========================== -->
 
       <div
         class="relative z-10 min-h-screen max-w-7xl mx-auto px-8 lg:px-16 flex items-center"
@@ -39,14 +27,14 @@
           class="w-full grid grid-cols-1 lg:grid-cols-2 gap-12 lg:gap-20 items-center"
         >
           <!-- =========================
-                     LEFT SIDE
-                ========================== -->
+               LEFT SIDE
+          ========================== -->
 
           <div class="text-gray-800">
             <!-- LOGO -->
 
             <a href="Landing page.html" class="flex items-center gap-3 mb-14">
-              <img class="w-40" src="/images/logo.png" alt="" />
+              <img class="w-40" src="/images/logo.png" alt="Reen Bank" />
             </a>
 
             <!-- SMALL TITLE -->
@@ -60,7 +48,6 @@
             >
               Experience
               <br />
-
               hassle-free banking
             </h1>
 
@@ -75,32 +62,47 @@
             <!-- SOCIAL MEDIA -->
 
             <div class="flex items-center gap-3 mt-10">
+              <!-- FACEBOOK -->
               <a
                 href="#"
-                class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold"
+                class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center overflow-hidden"
               >
-                f
+                <img
+                  src="/images/facebook 2.png"
+                  alt="Facebook"
+                  class="w-3.5 h-3.5 object-contain"
+                />
               </a>
 
+              <!-- INSTAGRAM -->
               <a
                 href="#"
-                class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold"
+                class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center overflow-hidden"
               >
-                ◎
+                <img
+                  src="/images/instagram 2.png"
+                  alt="Instagram"
+                  class="w-3.5 h-3.5 object-contain"
+                />
               </a>
 
+              <!-- TWITTER -->
               <a
                 href="#"
-                class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center text-xs font-bold"
+                class="w-6 h-6 rounded-full bg-emerald-500 text-white flex items-center justify-center overflow-hidden"
               >
-                t
+                <img
+                  src="/images/twitter 2.png"
+                  alt="Twitter"
+                  class="w-3.5 h-3.5 object-contain"
+                />
               </a>
             </div>
           </div>
 
           <!-- =========================
-                     RIGHT SIDE
-                ========================== -->
+               RIGHT SIDE
+          ========================== -->
 
           <div class="flex justify-center lg:justify-end">
             <!-- OTP CARD -->
@@ -116,62 +118,79 @@
 
               <!-- EMAIL MESSAGE -->
 
-              <p class="text-[9px] text-gray-400 mb-4">
-                A 6-digit code has been sent to your email us****me@gmail.com
+              <p class="text-[9px] text-gray-400 mb-5">
+                A 6-digit code has been sent to your email
+                <span id="maskedEmail"> us****me@gmail.com </span>
 
                 <a
                   href="Register page.html"
-                  class="text-emerald-500 font-medium"
+                  class="text-emerald-500 font-medium ml-1"
                 >
                   Change
                 </a>
               </p>
 
               <!-- =========================
-                             OTP INPUTS
-                        ========================== -->
+                   SIX OTP INPUT BOXES
+              ========================== -->
 
-              <div class="flex justify-between gap-3">
+              <div
+                id="otpInputs"
+                class="flex items-center justify-between gap-3"
+              >
+                <!-- BOX 1 -->
+
                 <input
                   type="text"
                   maxlength="1"
-                  class="otp-input"
                   inputmode="numeric"
+                  autocomplete="one-time-code"
+                  class="otp-box w-12 h-12 border border-gray-300 rounded-lg text-center text-lg font-semibold text-gray-700 outline-none focus:border-[#32b98a] focus:ring-2 focus:ring-[#32b98a]/20 transition"
                 />
 
-                <input
-                  type="text"
-                  maxlength="1"
-                  class="otp-input"
-                  inputmode="numeric"
-                />
+                <!-- BOX 2 -->
 
                 <input
                   type="text"
                   maxlength="1"
-                  class="otp-input"
                   inputmode="numeric"
+                  class="otp-box w-12 h-12 border border-gray-300 rounded-lg text-center text-lg font-semibold text-gray-700 outline-none focus:border-[#32b98a] focus:ring-2 focus:ring-[#32b98a]/20 transition"
                 />
+
+                <!-- BOX 3 -->
 
                 <input
                   type="text"
                   maxlength="1"
-                  class="otp-input"
                   inputmode="numeric"
+                  class="otp-box w-12 h-12 border border-gray-300 rounded-lg text-center text-lg font-semibold text-gray-700 outline-none focus:border-[#32b98a] focus:ring-2 focus:ring-[#32b98a]/20 transition"
                 />
+
+                <!-- BOX 4 -->
 
                 <input
                   type="text"
                   maxlength="1"
-                  class="otp-input"
                   inputmode="numeric"
+                  class="otp-box w-12 h-12 border border-gray-300 rounded-lg text-center text-lg font-semibold text-gray-700 outline-none focus:border-[#32b98a] focus:ring-2 focus:ring-[#32b98a]/20 transition"
                 />
+
+                <!-- BOX 5 -->
 
                 <input
                   type="text"
                   maxlength="1"
-                  class="otp-input"
                   inputmode="numeric"
+                  class="otp-box w-12 h-12 border border-gray-300 rounded-lg text-center text-lg font-semibold text-gray-700 outline-none focus:border-[#32b98a] focus:ring-2 focus:ring-[#32b98a]/20 transition"
+                />
+
+                <!-- BOX 6 -->
+
+                <input
+                  type="text"
+                  maxlength="1"
+                  inputmode="numeric"
+                  class="otp-box w-12 h-12 border border-gray-300 rounded-lg text-center text-lg font-semibold text-gray-700 outline-none focus:border-[#32b98a] focus:ring-2 focus:ring-[#32b98a]/20 transition"
                 />
               </div>
 
@@ -184,9 +203,9 @@
               <!-- VERIFY BUTTON -->
 
               <button
-                id="verifyOTP"
                 type="button"
-                class="w-full h-10 mt-5 bg-emerald-500 hover:bg-emerald-600 text-white text-sm font-semibold rounded-md transition"
+                onclick="verifyOTP()"
+                class="w-full h-10 mt-5 bg-[#32b98a] hover:bg-[#27a97d] text-white text-sm font-semibold rounded-md transition-all duration-200 hover:shadow-md"
               >
                 Verify Email
               </button>
@@ -199,7 +218,7 @@
                 <button
                   id="resendOTP"
                   type="button"
-                  class="text-emerald-500 font-medium ml-1"
+                  class="text-emerald-500 font-medium ml-1 hover:underline"
                 >
                   Resend
                 </button>
@@ -207,13 +226,166 @@
 
               <!-- ERROR / SUCCESS MESSAGE -->
 
-              <p id="otpMessage" class="text-xs mt-3"></p>
+              <p id="otpMessage" class="text-xs mt-3 min-h-[16px]"></p>
             </div>
           </div>
         </div>
       </div>
     </main>
 
+    <!-- =================================
+         REGISTRATION SUCCESS MODAL
+    ================================== -->
+
+    <div
+      id="registrationSuccessModal"
+      class="hidden fixed inset-0 bg-black/40 backdrop-blur-sm items-center justify-center z-50"
+    >
+      <div
+        class="bg-white w-[380px] max-w-[90%] rounded-2xl p-8 text-center shadow-2xl"
+      >
+        <!-- CHECK ICON -->
+
+        <div
+          class="mx-auto w-16 h-16 rounded-full bg-[#32b98a] text-white flex items-center justify-center text-3xl font-bold shadow-lg"
+        >
+          ✓
+        </div>
+
+        <!-- TITLE -->
+
+        <h2 class="text-xl font-semibold text-gray-800 mt-5">
+          Registration Successful
+        </h2>
+
+        <!-- MESSAGE -->
+
+        <p class="text-sm text-gray-500 mt-2 leading-6">
+          Your Reen Bank account has been created successfully.
+        </p>
+
+        <!-- LOGIN BUTTON -->
+
+        <button
+          type="button"
+          onclick="goToLogin()"
+          class="w-full bg-[#32b98a] hover:bg-[#27a97d] text-white py-3 rounded-lg mt-6 font-semibold transition-all duration-200 hover:shadow-md"
+        >
+          Continue to Login
+        </button>
+      </div>
+    </div>
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="./Logins.js"></script>
     <script src="./script.js"></script>
+
+    <!-- =========================
+         OTP BOX FUNCTIONALITY
+    ========================== -->
+
+    <script>
+      document.addEventListener("DOMContentLoaded", function () {
+        const otpBoxes = document.querySelectorAll(".otp-box");
+
+        if (!otpBoxes.length) return;
+
+        // ==========================================
+        // TYPE ONE DIGIT
+        // ==========================================
+
+        otpBoxes.forEach((box, index) => {
+          box.addEventListener("input", function () {
+            // Remove anything that is not a number
+            this.value = this.value.replace(/\D/g, "");
+
+            // Move to next box
+            if (this.value && index < otpBoxes.length - 1) {
+              otpBoxes[index + 1].focus();
+            }
+          });
+
+          // ==========================================
+          // BACKSPACE
+          // ==========================================
+
+          box.addEventListener("keydown", function (event) {
+            if (event.key === "Backspace" && !this.value && index > 0) {
+              otpBoxes[index - 1].focus();
+            }
+          });
+
+          // ==========================================
+          // ARROW LEFT
+          // ==========================================
+
+          box.addEventListener("keydown", function (event) {
+            if (event.key === "ArrowLeft" && index > 0) {
+              otpBoxes[index - 1].focus();
+            }
+          });
+
+          // ==========================================
+          // ARROW RIGHT
+          // ==========================================
+
+          box.addEventListener("keydown", function (event) {
+            if (event.key === "ArrowRight" && index < otpBoxes.length - 1) {
+              otpBoxes[index + 1].focus();
+            }
+          });
+
+          // ==========================================
+          // PASTE FULL OTP
+          // ==========================================
+
+          box.addEventListener("paste", function (event) {
+            event.preventDefault();
+
+            const pastedText = event.clipboardData
+              .getData("text")
+              .replace(/\D/g, "")
+              .slice(0, 6);
+
+            pastedText.split("").forEach((digit, i) => {
+              if (otpBoxes[i]) {
+                otpBoxes[i].value = digit;
+              }
+            });
+
+            // Focus last filled box / next available box
+            if (pastedText.length > 0) {
+              const nextIndex = Math.min(
+                pastedText.length,
+                otpBoxes.length - 1,
+              );
+
+              otpBoxes[nextIndex].focus();
+            }
+          });
+        });
+
+        // ==========================================
+        // FOCUS FIRST BOX
+        // ==========================================
+
+        otpBoxes[0].focus();
+      });
+
+      // ==========================================
+      // GET COMPLETE OTP
+      // ==========================================
+
+      function getEnteredOTP() {
+        const otpBoxes = document.querySelectorAll(".otp-box");
+
+        return Array.from(otpBoxes)
+          .map((box) => box.value)
+          .join("");
+      }
+    </script>
   </body>
 </html>

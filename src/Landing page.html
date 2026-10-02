@@ -13,26 +13,30 @@
     <!-- =========================
          NAVBAR
     ========================== -->
+
     <header class="absolute top-0 left-0 w-full z-50">
       <nav
-        class="max-w-6xl mx-auto px-8 py-5 flex items-center justify-between"
+        class="max-w-7xl mx-auto px-8 lg:px-12 py-7 flex items-center justify-between"
       >
         <!-- Logo -->
-        <a href="Landing page.html" class="flex items-center gap-2">
-          <img class="w-40" src="/images/logo.png" alt="" />
+
+        <a href="Landing page.html" class="flex items-center gap-3">
+          <img class="w-52 h-auto" src="/images/logo.png" alt="Reen Bank" />
         </a>
 
         <!-- Navigation -->
-        <div class="flex items-center gap-8 text-[10px] text-gray-700">
+
+        <div class="flex items-center gap-12 text-base text-gray-700">
           <a href="#" class="hover:text-emerald-500 transition"> About </a>
 
           <a href="#" class="hover:text-emerald-500 transition"> Contact Us </a>
         </div>
 
         <!-- Login -->
+
         <a
           href="Login page.html"
-          class="border border-emerald-500 text-emerald-600 text-[10px] px-5 py-1.5 rounded-md hover:bg-emerald-500 hover:text-white transition"
+          class="border-2 border-emerald-500 text-emerald-600 text-sm font-medium px-7 py-3 rounded-lg hover:bg-emerald-500 hover:text-white transition"
         >
           Login
         </a>
@@ -42,15 +46,17 @@
     <!-- =========================
          HERO SECTION
     ========================== -->
-    <section class="bg-[#d8f5eb] min-h-[305px]">
-      <div class="max-w-6xl mx-auto px-8 pt-24 pb-10">
-        <div class="grid grid-cols-2 items-center gap-10">
+
+    <section class="bg-[#d8f5eb] min-h-[520px] flex items-center">
+      <div class="max-w-7xl w-full mx-auto px-8 lg:px-12 pt-32 pb-16">
+        <div class="grid grid-cols-1 md:grid-cols-2 items-center gap-16">
           <!-- HERO TEXT -->
+
           <div class="font-bold">
-            <p class="text-emerald-600 text-[11px] font-bold">Reen Bank</p>
+            <p class="text-emerald-600 text-base font-bold mb-3">Reen Bank</p>
 
             <h1
-              class="text-[48px] leading-[1.15] font-semibold text-gray-800 max-w-md"
+              class="text-[58px] lg:text-[64px] leading-[1.08] font-semibold text-gray-800 max-w-2xl"
             >
               Experience
               <br />
@@ -58,7 +64,7 @@
             </h1>
 
             <p
-              class="text-[12px] leading-[1.6] text-gray-600 max-w-[310px] mt-4"
+              class="text-base lg:text-lg leading-[1.7] text-gray-600 max-w-xl mt-7 font-normal"
             >
               Experience simple, secure, and stress-free banking. Say goodbye to
               long queues and complex procedures and hello to hassle-free
@@ -66,17 +72,18 @@
             </p>
 
             <!-- BUTTONS -->
-            <div class="flex items-center gap-3 mt-5">
+
+            <div class="flex items-center gap-5 mt-8">
               <a
                 href="Register page.html"
-                class="bg-emerald-500 text-white text-[8px] px-4 py-2 rounded hover:bg-emerald-600 transition"
+                class="bg-emerald-500 text-white text-sm font-semibold px-7 py-3.5 rounded-lg hover:bg-emerald-600 hover:-translate-y-0.5 transition"
               >
                 Get Started
               </a>
 
               <a
                 href="#services"
-                class="border border-emerald-500 text-emerald-600 text-[8px] px-4 py-2 rounded hover:bg-emerald-500 hover:text-white transition"
+                class="border-2 border-emerald-500 text-emerald-600 text-sm font-semibold px-7 py-3.5 rounded-lg hover:bg-emerald-500 hover:text-white transition"
               >
                 Learn More →
               </a>
@@ -84,12 +91,12 @@
           </div>
 
           <!-- HERO IMAGE -->
+
           <div class="flex justify-center items-center">
-            <!-- Replace this image with your bank card image -->
             <img
               src="/images/Reen_Bank_Credit_Card_Mockup_v01 1.png"
               alt="Reen Bank Cards"
-              class="w-[300px] h-auto object-contain"
+              class="w-[430px] lg:w-[500px] h-auto object-contain hover:scale-105 transition duration-500"
             />
           </div>
         </div>
@@ -99,31 +106,41 @@
     <!-- =========================
          SERVICES SECTION
     ========================== -->
-    <section id="services" class="bg-white py-9">
-      <div class="max-w-6xl mx-auto px-8">
+
+    <section id="services" class="bg-white py-16">
+      <div class="max-w-7xl mx-auto px-8 lg:px-12">
         <!-- TITLE -->
-        <h2 class="text-[19px] font-semibold text-gray-800 mb-7">Services</h2>
+
+        <h2 class="text-3xl lg:text-4xl font-semibold text-gray-800 mb-12">
+          Services
+        </h2>
 
         <!-- SERVICES GRID -->
-        <div class="grid grid-cols-2 gap-x-16 gap-y-7">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-x-20 gap-y-12">
           <!-- SERVICE 1 -->
-          <div class="flex gap-4">
+
+          <div class="flex gap-6">
             <!-- ICON -->
-            <div class="w-7 shrink-0">
+
+            <div
+              class="w-14 h-14 shrink-0 rounded-xl bg-[#e9f9f3] flex items-center justify-center"
+            >
               <img
                 src="/images/savings 1.png"
                 alt="Savings"
-                class="w-6 h-6 object-contain"
+                class="w-9 h-9 object-contain"
               />
             </div>
 
             <!-- CONTENT -->
+
             <div>
-              <h3 class="text-emerald-500 text-[19px] font-semibold mb-1">
+              <h3 class="text-2xl text-emerald-500 font-semibold mb-3">
                 Savings accounts
               </h3>
 
-              <p class="text-[12px] leading-[1.55] text-gray-600">
+              <p class="text-base leading-[1.7] text-gray-600">
                 Reen Bank could offer a variety of savings accounts with
                 different interest rates and terms, allowing customers to save
                 money and earn interest over time. These accounts could include
@@ -134,21 +151,24 @@
           </div>
 
           <!-- SERVICE 2 -->
-          <div class="flex gap-4">
-            <div class="w-7 shrink-0">
+
+          <div class="flex gap-6">
+            <div
+              class="w-14 h-14 shrink-0 rounded-xl bg-[#e9f9f3] flex items-center justify-center"
+            >
               <img
                 src="/images/personal 1.png"
                 alt="Personal loans"
-                class="w-6 h-6 object-contain"
+                class="w-9 h-9 object-contain"
               />
             </div>
 
             <div>
-              <h3 class="text-emerald-500 text-[19px] font-semibold mb-1">
+              <h3 class="text-2xl text-emerald-500 font-semibold mb-3">
                 Personal loans
               </h3>
 
-              <p class="text-[12px] leading-[1.55] text-gray-600">
+              <p class="text-base leading-[1.7] text-gray-600">
                 Reen Bank could offer personal loans for a variety of purposes,
                 such as debt consolidation, home improvements, or major
                 purchases. Customers could apply online and receive a decision
@@ -159,21 +179,24 @@
           </div>
 
           <!-- SERVICE 3 -->
-          <div class="flex gap-4">
-            <div class="w-7 shrink-0">
+
+          <div class="flex gap-6">
+            <div
+              class="w-14 h-14 shrink-0 rounded-xl bg-[#e9f9f3] flex items-center justify-center"
+            >
               <img
                 src="/images/credit-card 1.png"
                 alt="Credit cards"
-                class="w-6 h-6 object-contain"
+                class="w-9 h-9 object-contain"
               />
             </div>
 
             <div>
-              <h3 class="text-emerald-500 text-[19px] font-semibold mb-1">
+              <h3 class="text-2xl text-emerald-500 font-semibold mb-3">
                 Credit cards
               </h3>
 
-              <p class="text-[12px] leading-[1.55] text-gray-600">
+              <p class="text-base leading-[1.7] text-gray-600">
                 Reen Bank could offer credit cards with different rewards
                 programs and benefits, such as cash back, travel rewards, or low
                 interest rates. Customers could manage their cards online and
@@ -183,21 +206,24 @@
           </div>
 
           <!-- SERVICE 4 -->
-          <div class="flex gap-4">
-            <div class="w-7 shrink-0">
+
+          <div class="flex gap-6">
+            <div
+              class="w-14 h-14 shrink-0 rounded-xl bg-[#e9f9f3] flex items-center justify-center"
+            >
               <img
                 src="/images/money 1.png"
                 alt="Investment services"
-                class="w-6 h-6 object-contain"
+                class="w-9 h-9 object-contain"
               />
             </div>
 
             <div>
-              <h3 class="text-emerald-500 text-[19px] font-semibold mb-1">
+              <h3 class="text-2xl text-emerald-500 font-semibold mb-3">
                 Investment services
               </h3>
 
-              <p class="text-[12px] leading-[1.55] text-gray-600">
+              <p class="text-base leading-[1.7] text-gray-600">
                 Reen Bank could offer investment services for customers looking
                 to grow their wealth over time. These services could include
                 mutual funds, exchange-traded funds, and other investment
@@ -208,21 +234,24 @@
           </div>
 
           <!-- SERVICE 5 -->
-          <div class="flex gap-4">
-            <div class="w-7 shrink-0">
+
+          <div class="flex gap-6">
+            <div
+              class="w-14 h-14 shrink-0 rounded-xl bg-[#e9f9f3] flex items-center justify-center"
+            >
               <img
                 src="/images/bill 1.png"
                 alt="Online bill pay"
-                class="w-6 h-6 object-contain"
+                class="w-9 h-9 object-contain"
               />
             </div>
 
             <div>
-              <h3 class="text-emerald-500 text-[19px] font-semibold mb-1">
+              <h3 class="text-2xl text-emerald-500 font-semibold mb-3">
                 Online bill pay
               </h3>
 
-              <p class="text-[12px] leading-[1.55] text-gray-600">
+              <p class="text-base leading-[1.7] text-gray-600">
                 Reen Bank could offer a convenient online bill pay service,
                 allowing customers to pay bills and manage expenses from their
                 computer or mobile device. This service could include features
@@ -233,21 +262,24 @@
           </div>
 
           <!-- SERVICE 6 -->
-          <div class="flex gap-4">
-            <div class="w-7 shrink-0">
+
+          <div class="flex gap-6">
+            <div
+              class="w-14 h-14 shrink-0 rounded-xl bg-[#e9f9f3] flex items-center justify-center"
+            >
               <img
                 src="/images/deal 1.png"
                 alt="Business banking"
-                class="w-6 h-6 object-contain"
+                class="w-9 h-9 object-contain"
               />
             </div>
 
             <div>
-              <h3 class="text-emerald-500 text-[19px] font-semibold mb-1">
+              <h3 class="text-2xl text-emerald-500 font-semibold mb-3">
                 Business banking
               </h3>
 
-              <p class="text-[12px] leading-[1.55] text-gray-600">
+              <p class="text-base leading-[1.7] text-gray-600">
                 Reen Bank could offer a range of banking services for small and
                 medium-sized businesses, including checking accounts, business
                 loans, merchant services, and cash management tools. These
@@ -261,39 +293,45 @@
     </section>
 
     <!-- =========================
-     FAQ SECTION
-========================== -->
-    <section id="faqs" class="bg-[#d8f5eb] py-12">
-      <div class="max-w-6xl mx-auto px-8">
+         FAQ SECTION
+    ========================== -->
+
+    <section id="faqs" class="bg-[#d8f5eb] py-20">
+      <div class="max-w-7xl mx-auto px-8 lg:px-12">
         <!-- FAQ HEADER -->
-        <div class="mb-8">
-          <h2 class="text-[24px] font-semibold text-gray-800">FAQs</h2>
+
+        <div class="mb-12">
+          <h2 class="text-4xl font-semibold text-gray-800">FAQs</h2>
         </div>
 
         <!-- FAQ GRID -->
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
           <!-- =========================
-                 LEFT SIDE
-            ========================== -->
+               LEFT SIDE
+          ========================== -->
+
           <div class="relative overflow-hidden">
             <!-- BIG QUESTION MARK -->
+
             <div
-              class="absolute -right-4 -top-10 w-32 h-32 rounded-full border-[16px] border-[#b9dfd3] opacity-70"
+              class="absolute -right-4 -top-10 w-44 h-44 rounded-full border-[20px] border-[#b9dfd3] opacity-70"
             >
               <span
-                class="absolute inset-0 flex items-center justify-center text-[70px] font-bold text-[#b9dfd3]"
+                class="absolute inset-0 flex items-center justify-center text-[95px] font-bold text-[#b9dfd3]"
               >
                 ?
               </span>
             </div>
 
             <!-- QUESTION -->
-            <div class="relative z-10 max-w-sm">
-              <h3 class="text-emerald-600 text-[12px] font-semibold mb-2">
+
+            <div class="relative z-10 max-w-lg">
+              <h3 class="text-emerald-600 text-lg font-semibold mb-4">
                 What types of accounts does Reen Bank offer?
               </h3>
 
-              <p class="text-[9px] leading-[1.6] text-gray-600">
+              <p class="text-base leading-[1.7] text-gray-600">
                 Reen Bank offers a variety of accounts to meet your financial
                 needs, including savings accounts, current accounts, business
                 accounts and other banking services.
@@ -302,24 +340,26 @@
           </div>
 
           <!-- =========================
-                 RIGHT SIDE FAQS
-            ========================== -->
-          <div class="space-y-3">
+               RIGHT SIDE FAQS
+          ========================== -->
+
+          <div class="space-y-5">
             <!-- FAQ 1 -->
-            <div class="border-b border-gray-300 pb-3">
+
+            <div class="border-b border-gray-300 pb-5">
               <button
                 onclick="toggleFAQ(this)"
                 class="w-full flex items-center justify-between text-left"
               >
-                <span class="text-[10px] font-medium text-gray-700">
+                <span class="text-base font-medium text-gray-700">
                   How do I open an account with Reen Bank?
                 </span>
 
-                <span class="faq-icon text-emerald-600 text-sm"> + </span>
+                <span class="faq-icon text-emerald-600 text-xl"> + </span>
               </button>
 
-              <div class="faq-answer hidden mt-2">
-                <p class="text-[9px] leading-[1.5] text-gray-600">
+              <div class="faq-answer hidden mt-3">
+                <p class="text-sm leading-[1.6] text-gray-600">
                   You can open an account by completing the registration process
                   and providing the required information.
                 </p>
@@ -327,20 +367,21 @@
             </div>
 
             <!-- FAQ 2 -->
-            <div class="border-b border-gray-300 pb-3">
+
+            <div class="border-b border-gray-300 pb-5">
               <button
                 onclick="toggleFAQ(this)"
                 class="w-full flex items-center justify-between text-left"
               >
-                <span class="text-[10px] font-medium text-gray-700">
+                <span class="text-base font-medium text-gray-700">
                   Is Reen Bank FDIC insured?
                 </span>
 
-                <span class="faq-icon text-emerald-600 text-sm"> + </span>
+                <span class="faq-icon text-emerald-600 text-xl"> + </span>
               </button>
 
-              <div class="faq-answer hidden mt-2">
-                <p class="text-[9px] leading-[1.5] text-gray-600">
+              <div class="faq-answer hidden mt-3">
+                <p class="text-sm leading-[1.6] text-gray-600">
                   Please check the applicable deposit insurance information for
                   the banking service you are using.
                 </p>
@@ -348,20 +389,21 @@
             </div>
 
             <!-- FAQ 3 -->
-            <div class="border-b border-gray-300 pb-3">
+
+            <div class="border-b border-gray-300 pb-5">
               <button
                 onclick="toggleFAQ(this)"
                 class="w-full flex items-center justify-between text-left"
               >
-                <span class="text-[10px] font-medium text-gray-700">
+                <span class="text-base font-medium text-gray-700">
                   How can I access my Reen Bank account online?
                 </span>
 
-                <span class="faq-icon text-emerald-600 text-sm"> + </span>
+                <span class="faq-icon text-emerald-600 text-xl"> + </span>
               </button>
 
-              <div class="faq-answer hidden mt-2">
-                <p class="text-[9px] leading-[1.5] text-gray-600">
+              <div class="faq-answer hidden mt-3">
+                <p class="text-sm leading-[1.6] text-gray-600">
                   You can access your account through the online banking portal
                   using your registered login details.
                 </p>
@@ -369,20 +411,21 @@
             </div>
 
             <!-- FAQ 4 -->
-            <div class="border-b border-gray-300 pb-3">
+
+            <div class="border-b border-gray-300 pb-5">
               <button
                 onclick="toggleFAQ(this)"
                 class="w-full flex items-center justify-between text-left"
               >
-                <span class="text-[10px] font-medium text-gray-700">
+                <span class="text-base font-medium text-gray-700">
                   What should I do if I forget my password?
                 </span>
 
-                <span class="faq-icon text-emerald-600 text-sm"> + </span>
+                <span class="faq-icon text-emerald-600 text-xl"> + </span>
               </button>
 
-              <div class="faq-answer hidden mt-2">
-                <p class="text-[9px] leading-[1.5] text-gray-600">
+              <div class="faq-answer hidden mt-3">
+                <p class="text-sm leading-[1.6] text-gray-600">
                   Use the password recovery option on the login page to reset
                   your password.
                 </p>
@@ -390,20 +433,21 @@
             </div>
 
             <!-- FAQ 5 -->
-            <div class="border-b border-gray-300 pb-3">
+
+            <div class="border-b border-gray-300 pb-5">
               <button
                 onclick="toggleFAQ(this)"
                 class="w-full flex items-center justify-between text-left"
               >
-                <span class="text-[10px] font-medium text-gray-700">
+                <span class="text-base font-medium text-gray-700">
                   How do I sign up for an account with Reen Bank?
                 </span>
 
-                <span class="faq-icon text-emerald-600 text-sm"> + </span>
+                <span class="faq-icon text-emerald-600 text-xl"> + </span>
               </button>
 
-              <div class="faq-answer hidden mt-2">
-                <p class="text-[9px] leading-[1.5] text-gray-600">
+              <div class="faq-answer hidden mt-3">
+                <p class="text-sm leading-[1.6] text-gray-600">
                   Click the sign-up option and follow the instructions to create
                   your new banking account.
                 </p>
@@ -415,81 +459,91 @@
     </section>
 
     <!-- =========================
-     FINANCE SERVICES
-========================== -->
-    <section class="bg-white py-8">
-      <div class="max-w-6xl mx-auto px-8">
-        <h2 class="text-center text-[12px] font-semibold text-gray-800 mb-6">
+         FINANCE SERVICES
+    ========================== -->
+
+    <section class="bg-white py-14">
+      <div class="max-w-7xl mx-auto px-8 lg:px-12">
+        <h2 class="text-center text-lg font-semibold text-gray-800 mb-10">
           Supported by various finance services
         </h2>
 
-        <div class="flex items-center justify-center gap-14 md:gap-20">
+        <div
+          class="flex flex-wrap items-center justify-center gap-16 md:gap-24"
+        >
           <!-- Mastercard -->
+
           <img
             src="/images/Mastercard_2019_logo 2.png"
             alt="Mastercard"
-            class="w-[55px] h-auto object-contain"
+            class="w-[85px] h-auto object-contain hover:scale-110 transition"
           />
 
           <!-- Visa -->
+
           <img
             src="/images/visa.png"
             alt="Visa"
-            class="w-[55px] h-auto object-contain"
+            class="w-[85px] h-auto object-contain hover:scale-110 transition"
           />
 
           <!-- PayPal -->
+
           <img
             src="/images/PayPal-Logo 1.png"
             alt="PayPal"
-            class="w-[75px] h-auto object-contain"
+            class="w-[110px] h-auto object-contain hover:scale-110 transition"
           />
 
           <!-- Payoneer -->
+
           <img
             src="/images/Payoneer_logo 1.png"
             alt="Payoneer"
-            class="w-[100px] h-auto object-contain"
+            class="w-[145px] h-auto object-contain hover:scale-110 transition"
           />
         </div>
       </div>
     </section>
 
     <!-- =========================
-     FOOTER
-========================== -->
+         FOOTER
+    ========================== -->
+
     <footer class="bg-[#d8f5eb]">
-      <div class="max-w-6xl mx-auto px-8 py-8">
-        <div class="grid grid-cols-1 md:grid-cols-2 gap-10">
+      <div class="max-w-7xl mx-auto px-8 lg:px-12 py-14">
+        <div class="grid grid-cols-1 md:grid-cols-2 gap-16">
           <!-- =========================
-                 LEFT SIDE
-            ========================== -->
+               LEFT SIDE
+          ========================== -->
+
           <div>
-            <div class="grid grid-cols-2 gap-12">
+            <div class="grid grid-cols-2 gap-16">
               <!-- HELP -->
+
               <div>
-                <h3 class="text-emerald-500 text-[10px] font-semibold mb-4">
+                <h3 class="text-emerald-500 text-sm font-semibold mb-5">
                   HELP
                 </h3>
 
-                <div class="space-y-2">
+                <div class="space-y-4">
                   <a
                     href="#"
-                    class="block text-[7px] text-gray-600 hover:text-emerald-500"
+                    class="block text-sm text-gray-600 hover:text-emerald-500"
                   >
                     Help Center
                   </a>
 
                   <a
                     href="#"
-                    class="block text-[7px] text-gray-600 hover:text-emerald-500"
+                    class="block text-sm text-gray-600 hover:text-emerald-500"
                   >
                     Contact Us
                   </a>
 
                   <a
                     href="#"
-                    class="block text-[7px] text-gray-600 hover:text-emerald-500"
+                    class="block text-sm text-gray-600 hover:text-emerald-500"
                   >
                     How to Use
                   </a>
@@ -497,29 +551,30 @@
               </div>
 
               <!-- ABOUT -->
+
               <div>
-                <h3 class="text-emerald-500 text-[10px] font-semibold mb-4">
+                <h3 class="text-emerald-500 text-sm font-semibold mb-5">
                   ABOUT
                 </h3>
 
-                <div class="space-y-2">
+                <div class="space-y-4">
                   <a
                     href="#"
-                    class="block text-[7px] text-gray-600 hover:text-emerald-500"
+                    class="block text-sm text-gray-600 hover:text-emerald-500"
                   >
                     About Reen Bank
                   </a>
 
                   <a
                     href="#"
-                    class="block text-[7px] text-gray-600 hover:text-emerald-500"
+                    class="block text-sm text-gray-600 hover:text-emerald-500"
                   >
                     Terms & Conditions
                   </a>
 
                   <a
                     href="#"
-                    class="block text-[7px] text-gray-600 hover:text-emerald-500"
+                    class="block text-sm text-gray-600 hover:text-emerald-500"
                   >
                     Privacy Policy
                   </a>
@@ -528,42 +583,45 @@
             </div>
 
             <!-- LOGO -->
-            <div class="mt-10 flex items-center gap-2">
+
+            <div class="mt-14 flex items-center gap-3">
               <div
-                class="w-5 h-5 border border-gray-700 rounded-sm flex items-center justify-center"
+                class="w-8 h-8 border-2 border-gray-700 rounded-md flex items-center justify-center"
               >
-                <span class="text-[9px] font-bold text-emerald-500"> rb </span>
+                <span class="text-sm font-bold text-emerald-500"> rb </span>
               </div>
 
-              <span class="text-[10px] font-semibold text-gray-800">
+              <span class="text-base font-semibold text-gray-800">
                 Reen Bank
               </span>
             </div>
 
             <!-- COPYRIGHT -->
-            <p class="text-[7px] text-gray-500 mt-8">
+
+            <p class="text-sm text-gray-500 mt-8">
               2023 ReenBank. All rights reserved
             </p>
 
             <!-- SOCIAL ICONS -->
-            <div class="flex items-center gap-2 mt-2">
+
+            <div class="flex items-center gap-3 mt-4">
               <a
                 href="#"
-                class="w-3.5 h-3.5 rounded-full bg-emerald-500 flex items-center justify-center text-white text-[7px]"
+                class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white text-sm hover:scale-110 transition"
               >
                 f
               </a>
 
               <a
                 href="#"
-                class="w-3.5 h-3.5 rounded-full bg-emerald-500 flex items-center justify-center text-white text-[7px]"
+                class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white text-sm hover:scale-110 transition"
               >
                 t
               </a>
 
               <a
                 href="#"
-                class="w-3.5 h-3.5 rounded-full bg-emerald-500 flex items-center justify-center text-white text-[7px]"
+                class="w-8 h-8 rounded-full bg-emerald-500 flex items-center justify-center text-white text-sm hover:scale-110 transition"
               >
                 in
               </a>
@@ -571,9 +629,12 @@
           </div>
 
           <!-- =========================
-                 RIGHT SIDE / EMAIL
-            ========================== -->
-          <div class="relative min-h-[220px] overflow-hidden rounded-tl-[25px]">
+               RIGHT SIDE / EMAIL
+          ========================== -->
+
+          <div
+            class="relative min-h-[320px] overflow-hidden rounded-tl-[35px] rounded-br-[35px]"
+          >
             <!-- BACKGROUND IMAGE -->
 
             <img
@@ -583,14 +644,18 @@
             />
 
             <!-- DARK OVERLAY -->
+
             <div class="absolute inset-0 bg-black/50"></div>
 
             <!-- CONTENT -->
-            <div class="relative z-10 h-full flex flex-col justify-center px-8">
-              <p class="text-white text-[9px] mb-2">New to Reen Bank?</p>
+
+            <div
+              class="relative z-10 h-full flex flex-col justify-center px-10"
+            >
+              <p class="text-white text-sm mb-3">New to Reen Bank?</p>
 
               <h2
-                class="text-white text-[20px] leading-[1.15] font-semibold max-w-sm"
+                class="text-white text-3xl lg:text-4xl leading-[1.15] font-semibold max-w-lg"
               >
                 Enter your Email
                 <br />
@@ -598,16 +663,19 @@
               </h2>
 
               <!-- EMAIL FORM -->
-              <div class="flex items-center gap-2 mt-5 max-w-md">
+
+              <div
+                class="flex flex-col sm:flex-row items-stretch gap-3 mt-7 max-w-xl"
+              >
                 <input
                   type="email"
                   placeholder="Enter your Email"
-                  class="flex-1 bg-white/10 border border-white/40 rounded px-3 py-2 text-[8px] text-white placeholder:text-gray-300 outline-none focus:border-emerald-400"
+                  class="flex-1 bg-white/10 border border-white/40 rounded-lg px-5 py-4 text-sm text-white placeholder:text-gray-300 outline-none focus:border-emerald-400"
                 />
 
                 <button
                   type="button"
-                  class="bg-emerald-500 text-white text-[8px] px-5 py-2 rounded hover:bg-emerald-600 transition"
+                  class="bg-emerald-500 text-white text-sm font-semibold px-7 py-4 rounded-lg hover:bg-emerald-600 transition"
                 >
                   Get Started
                 </button>
@@ -617,6 +685,11 @@
         </div>
       </div>
     </footer>
+
+    <!-- =========================
+         JAVASCRIPT
+    ========================== -->
+
+    <script src="./Script.js"></script>
   </body>
-  <script src="./Script.js"></script>
 </html>

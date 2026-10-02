@@ -2,387 +2,531 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-    <title>Profile - Reen Bank</title>
+    <title>Reen Bank - Profile</title>
 
     <link rel="stylesheet" href="./output.css" />
+
+    <style>
+      @keyframes pageIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      @keyframes cardIn {
+        from {
+          opacity: 0;
+          transform: translateY(20px);
+        }
+
+        to {
+          opacity: 1;
+          transform: translateY(0);
+        }
+      }
+
+      .page-animation {
+        animation: pageIn 0.6s ease-out;
+      }
+
+      .profile-card {
+        animation: cardIn 0.6s ease-out both;
+      }
+
+      @media (max-width: 1023px) {
+        .sidebar {
+          transform: translateX(-100%);
+          transition: transform 0.3s ease;
+        }
+
+        .sidebar.open {
+          transform: translateX(0);
+        }
+      }
+    </style>
   </head>
 
-  <body class="min-h-screen bg-[#f3fbf8] text-gray-800">
-    <!-- =========================
-         BACKGROUND
-    ========================== -->
+  <body class="bg-[#f5fbf9] text-[#202020]">
+    <!-- ================================= -->
+    <!-- MOBILE OVERLAY -->
+    <!-- ================================= -->
 
-    <div class="fixed inset-0 opacity-[0.10] pointer-events-none">
-      <img
-        src="./images/bank-pattern.png"
-        alt=""
-        class="w-full h-full object-cover"
-      />
-    </div>
+    <div
+      id="sidebarOverlay"
+      onclick="toggleSidebar()"
+      class="hidden fixed inset-0 bg-black/30 z-30 lg:hidden"
+    ></div>
 
-    <!-- =========================
-         MAIN PAGE
-    ========================== -->
+    <!-- ================================= -->
+    <!-- SIDEBAR -->
+    <!-- ================================= -->
 
-    <div class="relative z-10 min-h-screen max-w-[1250px] mx-auto">
-      <!-- =========================
-             HEADER
-        ========================== -->
+    <aside
+      id="sidebar"
+      class="sidebar fixed left-0 top-0 z-40 w-[240px] h-screen bg-white border-r border-gray-100 px-6 py-7 lg:translate-x-0"
+    >
+      <!-- LOGO -->
 
-      <header class="h-[110px] px-8 flex items-center justify-between">
-        <!-- LOGO -->
+      <div class="flex items-center gap-3 mb-14">
+        <img
+          src="/src/images/logo.png"
+          alt="Reen Bank Logo"
+          class="w-56 h-auto object-contain"
+        />
 
-        <div class="flex items-center gap-3">
-          <div
-            class="w-10 h-10 border-2 border-gray-800 rounded-md flex items-center justify-center"
-          >
-            <span class="text-2xl font-bold text-emerald-500"> rb </span>
-          </div>
+        <!-- <h1 class="text-xl font-bold"></h1> -->
+      </div>
 
-          <span class="text-[22px] font-semibold"> Reen Bank </span>
+      <!-- NAVIGATION -->
+
+      <nav class="space-y-3">
+        <a
+          href="./Dashboard.html"
+          class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-500 hover:bg-[#e9f9f3] hover:text-[#2db889] transition-all duration-300 hover:translate-x-1"
+        >
+          <img
+            src="/src/images/fi-sr-apps.png"
+            alt="Overview"
+            class="w-5 h-5"
+          />
+
+          <span>Overview</span>
+        </a>
+
+        <a
+          href="./Main account.html"
+          class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-500 hover:bg-[#e9f9f3] hover:text-[#2db889] transition-all duration-300 hover:translate-x-1"
+        >
+          <img
+            src="/src/images/fi-rr-credit-card.png"
+            alt="Accounts"
+            class="w-5 h-5"
+          />
+
+          <span>Accounts</span>
+        </a>
+
+        <a
+          href="./Transaction.html"
+          class="flex items-center gap-4 px-4 py-3 rounded-xl text-gray-500 hover:bg-[#e9f9f3] hover:text-[#2db889] transition-all duration-300 hover:translate-x-1"
+        >
+          <img
+            src="/src/images/Group 19.png"
+            alt="Transactions"
+            class="w-5 h-5"
+          />
+
+          <span>Transactions</span>
+        </a>
+
+        <!-- ACTIVE PROFILE -->
+
+        <a
+          href="./Profile.html"
+          class="flex items-center gap-4 px-4 py-3 rounded-xl bg-[#e9f9f3] text-[#2db889] font-semibold"
+        >
+          <img
+            src="/src/images/fi-rr-user (1).png"
+            alt="Profile"
+            class="w-5 h-5"
+          />
+
+          <span>Profile</span>
+        </a>
+      </nav>
+
+      <!-- LOGOUT -->
+
+      <!-- <a href="Login page.html">
+        <img
+          src="/src/images/fi-rr-arrow-left.png"
+          alt="Logout"
+          class="w-5 h-5 object-contain"
+        />
+
+        <span>Logout</span>
+      </button> 
+      </a> -->
+    </aside>
+
+    <!-- ================================= -->
+    <!-- MAIN -->
+    <!-- ================================= -->
+
+    <main class="lg:ml-[240px] min-h-screen page-animation">
+      <!-- ================================= -->
+      <!-- HEADER -->
+      <!-- ================================= -->
+
+      <header
+        class="h-[90px] bg-white/80 backdrop-blur-md border-b border-gray-100 flex items-center px-5 sm:px-8 lg:px-10"
+      >
+        <!-- MOBILE MENU -->
+
+        
+
+        <div>
+          <p class="text-xs text-gray-400">Reen Bank</p>
+
+          <h2 class="text-2xl sm:text-3xl font-bold">Profile</h2>
         </div>
 
-        <!-- PAGE TITLE -->
+        <!-- RIGHT SIDE -->
 
-        <h1 class="text-[28px] font-semibold mr-auto ml-16">Profile</h1>
+        <div class="ml-auto flex items-center gap-4 sm:gap-7">
+          <div class="hidden md:block text-right">
+            <p id="headerUserName" class="text-xs text-[#2db889]">User</p>
 
-        <!-- USER AREA -->
-
-        <div class="flex items-center gap-8">
-          <!-- USER NAME -->
-
-          <div class="text-center">
-            <p class="text-[9px] text-emerald-500">Maureen Oguche</p>
-
-            <p class="text-[20px] font-semibold leading-none mt-1">
-              1234567890
-            </p>
+            <p id="profileAccountNumber" class="font-bold text-lg"></p>
           </div>
 
-          <!-- SEARCH -->
-
-          <div class="hidden md:flex items-center gap-2 text-gray-500">
-            <span class="text-xl"> ⌕ </span>
-
-            <input
-              type="text"
-              placeholder="Search"
-              class="w-[70px] bg-transparent outline-none text-[9px] placeholder:text-gray-400"
-            />
-          </div>
-
-          <!-- NOTIFICATION -->
-
-          <button class="text-xl text-gray-600">♧</button>
-
-          <!-- PROFILE IMAGE -->
-
-          <div class="w-9 h-9 rounded-full overflow-hidden bg-gray-300">
+          <button
+            id="notificationButton"
+            type="button"
+            onclick="toggleNotifications()"
+            class="relative w-[25px] h-[25px] mr-[22px] flex items-center justify-center"
+          >
             <img
-              src="./images/profile.jpg"
+              src="/src/images/bell-solid.png"
+              alt="Notifications"
+              class="w-[17px] h-[17px]"
+            />
+
+            <span
+              id="notificationBadge"
+              class="hidden absolute -top-1 right-0 min-w-[13px] h-[13px] px-1 rounded-full bg-[#ef5260] text-white text-[7px] font-bold items-center justify-center"
+            >
+              0
+            </span>
+          </button>
+
+          <button
+            class="w-10 h-10 rounded-full overflow-hidden hover:scale-105 transition"
+          >
+            <img
+              id="headerProfileImage"
+              src="./Image/profile-image.png"
               alt="Profile"
               class="w-full h-full object-cover"
             />
-          </div>
+          </button>
         </div>
       </header>
 
-      <!-- =========================
-             PAGE BODY
-        ========================== -->
+      <!-- ================================= -->
+      <!-- CONTENT -->
+      <!-- ================================= -->
 
-      <div class="grid grid-cols-[180px_1fr] gap-8 px-8">
-        <!-- =========================
-                 SIDEBAR
-            ========================== -->
+      <section class="p-5 sm:p-8 lg:p-10">
+        <!-- PAGE INTRO -->
 
-        <aside class="min-h-[650px] flex flex-col">
-          <nav class="mt-8 space-y-3">
-            <!-- OVERVIEW -->
+        <div class="mb-8">
+          <p class="text-sm text-gray-400">Manage your account</p>
 
-            <a
-              href="dashboard.html"
-              class="flex items-center gap-5 px-3 py-3 text-gray-600 text-[12px] hover:text-emerald-500"
-            >
-              <span class="text-[22px]"> ▦ </span>
+          <h1 class="text-2xl sm:text-3xl font-bold mt-1">
+            Personal Information
+          </h1>
 
-              Overview
-            </a>
+          <p class="text-sm text-gray-400 mt-2">
+            Update your personal details and account preferences.
+          </p>
+        </div>
 
-            <!-- ACCOUNTS -->
+        <!-- ================================= -->
+        <!-- PROFILE GRID -->
+        <!-- ================================= -->
 
-            <a
-              href="accounts.html"
-              class="flex items-center gap-5 px-3 py-3 text-gray-600 text-[12px] hover:text-emerald-500"
-            >
-              <span class="text-[22px]"> ▰ </span>
+        <div class="grid grid-cols-1 xl:grid-cols-[320px_1fr] gap-6">
+          <!-- ================================= -->
+          <!-- PROFILE CARD -->
+          <!-- ================================= -->
 
-              Accounts
-            </a>
-
-            <!-- TRANSACTIONS -->
-
-            <a
-              href="transactions.html"
-              class="flex items-center gap-5 px-3 py-3 text-gray-600 text-[12px] hover:text-emerald-500"
-            >
-              <span class="text-[22px]"> ↔ </span>
-
-              Transactions
-            </a>
-
-            <!-- PROFILE ACTIVE -->
-
-            <a
-              href="profile.html"
-              class="flex items-center gap-5 px-3 py-3 text-emerald-500 text-[12px] font-medium"
-            >
-              <span class="text-[22px]"> ♙ </span>
-
-              Profile
-            </a>
-          </nav>
-
-          <!-- LOGOUT -->
-
-          <a
-            href="login.html"
-            class="mt-auto mb-8 flex items-center gap-5 px-3 py-3 text-gray-600 text-[12px]"
+          <div
+            class="profile-card bg-white rounded-3xl border border-gray-100 shadow-sm p-7 text-center"
           >
-            <span class="text-[22px]"> ← </span>
+            <!-- IMAGE -->
 
-            Logout
-          </a>
-        </aside>
-
-        <!-- =========================
-                 MAIN CONTENT
-            ========================== -->
-
-        <main class="pt-8 pb-12 grid grid-cols-[1fr_320px] gap-20">
-          <!-- =========================
-                     PROFILE CARD
-                ========================== -->
-
-          <section
-            class="bg-white rounded-lg min-h-[548px] px-16 py-7 flex flex-col items-center"
-          >
-            <!-- PROFILE IMAGE -->
-
-            <div
-              class="relative w-[108px] h-[108px] rounded-full overflow-visible mb-4"
-            >
+            <div class="relative mx-auto w-32 h-32">
               <img
-                src="./images/profile.jpg"
-                alt="Maureen Oguche"
-                class="w-full h-full object-cover rounded-full"
+                id="profilePreview"
+                src="./Image/profile-image.png"
+                alt="Profile photo"
+                class="w-full h-full rounded-full object-cover border-4 border-[#e9f9f3]"
               />
 
-              <!-- EDIT ICON -->
+              <!-- CAMERA BUTTON -->
 
-              <button
-                class="absolute right-[-2px] top-[5px] w-6 h-6 rounded-full bg-gray-200 text-gray-600 text-xs flex items-center justify-center"
+              <label
+                for="profileImageInput"
+                class="absolute bottom-1 right-1 w-14 h-14 flex items-center justify-center cursor-pointer transition-all duration-300"
               >
-                ✎
-              </button>
+                <img
+                  src="/src/images/edit.png"
+                  alt="Change photo"
+                  class="w-11 h-15 object-contain"
+                />
+              </label>
+
+              <input
+                id="profileImageInput"
+                type="file"
+                accept="image/*"
+                class="hidden"
+                onchange="previewProfileImage(event)"
+              />
             </div>
 
             <!-- NAME -->
 
-            <h2 class="text-[22px] font-semibold">Maureen Oguche</h2>
+            <h2 id="profileDisplayName" class="text-xl font-bold mt-5">User</h2>
 
-            <!-- PRO USER -->
+            <!-- EMAIL -->
 
-            <span
-              class="mt-2 bg-[#dfcaff] text-purple-700 text-[9px] font-medium px-5 py-2 rounded-md"
+            <p id="profileDisplayEmail" class="text-sm text-gray-400 mt-1">
+              user@example.com
+            </p>
+
+            <!-- ACCOUNT STATUS -->
+
+            <div
+              class="inline-flex items-center gap-2 mt-5 px-4 py-2 rounded-full bg-[#e9f9f3] text-[#2db889] text-xs font-semibold"
             >
-              Pro User
-            </span>
+              <span class="w-2 h-2 rounded-full bg-[#2db889]"> </span>
 
-            <!-- INFORMATION -->
+              Active Account
+            </div>
 
-            <div class="w-full max-w-[240px] mt-8">
+            <!-- ACCOUNT NUMBER -->
+
+            <div class="mt-7 pt-6 border-t border-gray-100">
+              <p class="text-xs text-gray-400">Account Number</p>
+
+              <p id="profileAccountNumber" class="font-bold text-lg mt-1">
+                1234567890
+              </p>
+            </div>
+          </div>
+
+          <!-- ================================= -->
+          <!-- INFORMATION -->
+          <!-- ================================= -->
+
+          <div
+            class="profile-card bg-white rounded-3xl border border-gray-100 shadow-sm p-6 sm:p-8"
+          >
+            <!-- TITLE -->
+
+            <div class="flex items-center justify-between mb-7">
+              <div>
+                <h2 class="text-xl font-bold">Account Information</h2>
+
+                <p class="text-sm text-gray-400 mt-1">
+                  Keep your information up to date.
+                </p>
+              </div>
+            </div>
+
+            <!-- FORM -->
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+              <!-- FULL NAME -->
+
+              <div>
+                <label class="text-sm font-semibold"> Full Name </label>
+
+                <input
+                  id="profileName"
+                  type="text"
+                  placeholder="Your full name"
+                  class="w-full h-12 mt-2 px-4 rounded-xl border border-gray-200 outline-none focus:border-[#2db889] focus:ring-4 focus:ring-[#2db889]/10 transition"
+                />
+              </div>
+
               <!-- EMAIL -->
 
-              <div class="pb-5 border-b border-gray-200">
-                <p class="text-[10px] text-emerald-500 mb-1">Email</p>
+              <div>
+                <label class="text-sm font-semibold"> Email Address </label>
 
-                <p class="text-[16px] font-semibold">
-                  oguchemaureenm@gmail.com
-                </p>
+                <input
+                  id="profileEmail"
+                  type="email"
+                  placeholder="your@email.com"
+                  class="w-full h-12 mt-2 px-4 rounded-xl border border-gray-200 outline-none focus:border-[#2db889] focus:ring-4 focus:ring-[#2db889]/10 transition"
+                />
               </div>
 
               <!-- PHONE -->
 
-              <div class="py-5 border-b border-gray-200">
-                <p class="text-[10px] text-emerald-500 mb-1">Phone Number</p>
+              <div>
+                <label class="text-sm font-semibold"> Phone Number </label>
 
-                <p class="text-[16px] font-semibold">+234 803 041 1314</p>
+                <input
+                  id="profilePhone"
+                  type="tel"
+                  placeholder="+234 800 000 0000"
+                  class="w-full h-12 mt-2 px-4 rounded-xl border border-gray-200 outline-none focus:border-[#2db889] focus:ring-4 focus:ring-[#2db889]/10 transition"
+                />
               </div>
 
               <!-- GENDER -->
 
-              <div class="pt-5">
-                <p class="text-[10px] text-emerald-500 mb-1">Gender</p>
+              <div>
+                <label class="text-sm font-semibold"> Gender </label>
 
-                <p class="text-[16px] font-semibold">Female</p>
+                <select
+                  id="profileGender"
+                  class="w-full h-12 mt-2 px-4 rounded-xl border border-gray-200 outline-none focus:border-[#2db889] transition"
+                >
+                  <option value="">Select gender</option>
+
+                  <option value="Male">Male</option>
+
+                  <option value="Female">Female</option>
+
+                  <option value="Other">Other</option>
+                </select>
+              </div>
+
+              <!-- ADDRESS -->
+
+              <div class="md:col-span-2">
+                <label class="text-sm font-semibold"> Address </label>
+
+                <input
+                  id="profileAddress"
+                  type="text"
+                  placeholder="Your address"
+                  class="w-full h-12 mt-2 px-4 rounded-xl border border-gray-200 outline-none focus:border-[#2db889] focus:ring-4 focus:ring-[#2db889]/10 transition"
+                />
               </div>
             </div>
 
-            <!-- RESET PASSWORD -->
+            <!-- SAVE -->
 
-            <button
-              class="w-full max-w-[240px] mt-9 py-3 rounded-lg bg-[#31bb88] text-white text-[14px] font-semibold hover:bg-[#28aa7b] transition"
+            <div
+              class="flex flex-col sm:flex-row sm:justify-end gap-3 mt-8 pt-6 border-t border-gray-100"
             >
-              Reset Password
-            </button>
-          </section>
+              <button
+                onclick="resetProfileForm()"
+                class="px-6 py-3 rounded-xl border border-gray-200 font-semibold text-gray-500 hover:bg-gray-50 active:scale-95 transition"
+              >
+                Cancel
+              </button>
 
-          <!-- =========================
-                     RIGHT SIDE
-                ========================== -->
-
-          <section class="pt-0">
-            <!-- =========================
-                         MAIN ACCOUNT
-                    ========================== -->
-
-            <div class="relative bg-[#cef3e4] rounded-lg h-[93px] px-6 py-5">
-              <p class="text-[10px] text-purple-800 font-medium">
-                Main Account
-              </p>
-
-              <p class="text-[23px] font-semibold leading-none mt-1">
-                ₦ 44,500.00
-              </p>
-
-              <!-- HIDE BALANCE -->
-
-              <button class="absolute right-6 top-5 text-gray-700 text-lg">
-                ◉
+              <button
+                onclick="saveProfileChanges()"
+                class="px-7 py-3 rounded-xl bg-[#2db889] text-white font-bold hover:bg-[#239d76] hover:-translate-y-1 active:scale-95 transition-all duration-300"
+              >
+                Save Changes
               </button>
             </div>
+          </div>
+        </div>
 
-            <!-- =========================
-                         TRANSACTIONS
-                    ========================== -->
+        <!-- ================================= -->
+        <!-- SECURITY -->
+        <!-- ================================= -->
 
-            <div class="mt-16">
-              <div class="flex items-center justify-between mb-4">
-                <h2 class="text-[17px] font-semibold">Transactions</h2>
+        <div
+          class="bg-white rounded-3xl border border-gray-100 shadow-sm p-6 sm:p-8 mt-6"
+        >
+          <div class="mb-7">
+            <h2 class="text-xl font-bold">Security</h2>
 
-                <a href="transactions.html" class="text-emerald-500 text-2xl">
-                  →
-                </a>
-              </div>
+            <p class="text-sm text-gray-400 mt-1">
+              Keep your Reen Bank account secure.
+            </p>
+          </div>
 
-              <!-- TRANSACTION 1 -->
+          <div class="grid grid-cols-1 md:grid-cols-2 gap-5">
+            <!-- CURRENT PASSWORD -->
 
-              <div
-                class="flex items-center justify-between py-2 border-b border-gray-200"
-              >
-                <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
+            <div>
+              <label class="text-sm font-semibold"> Current Password </label>
 
-                <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
-
-                <p class="text-[10px] text-red-500 font-medium">- 10,000.00</p>
-              </div>
-
-              <!-- TRANSACTION 2 -->
-
-              <div
-                class="flex items-center justify-between py-2 border-b border-gray-200"
-              >
-                <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
-
-                <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
-
-                <p class="text-[10px] text-[#31bb88] font-medium">
-                  + 10,000.00
-                </p>
-              </div>
-
-              <!-- TRANSACTION 3 -->
-
-              <div
-                class="flex items-center justify-between py-2 border-b border-gray-200"
-              >
-                <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
-
-                <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
-
-                <p class="text-[10px] text-red-500 font-medium">- 10,000.00</p>
-              </div>
-
-              <!-- TRANSACTION 4 -->
-
-              <div
-                class="flex items-center justify-between py-2 border-b border-gray-200"
-              >
-                <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
-
-                <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
-
-                <p class="text-[10px] text-[#31bb88] font-medium">
-                  + 10,000.00
-                </p>
-              </div>
-
-              <!-- TRANSACTION 5 -->
-
-              <div
-                class="flex items-center justify-between py-2 border-b border-gray-200"
-              >
-                <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
-
-                <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
-
-                <p class="text-[10px] text-red-500 font-medium">- 10,000.00</p>
-              </div>
-
-              <!-- TRANSACTION 6 -->
-
-              <div
-                class="flex items-center justify-between py-2 border-b border-gray-200"
-              >
-                <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
-
-                <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
-
-                <p class="text-[10px] text-[#31bb88] font-medium">
-                  + 10,000.00
-                </p>
-              </div>
-
-              <!-- TRANSACTION 7 -->
-
-              <div
-                class="flex items-center justify-between py-2 border-b border-gray-200"
-              >
-                <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
-
-                <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
-
-                <p class="text-[10px] text-red-500 font-medium">- 10,000.00</p>
-              </div>
-
-              <!-- TRANSACTION 8 -->
-
-              <div class="flex items-center justify-between py-2">
-                <p class="text-[10px] text-gray-500">Oluwaben Jamin</p>
-
-                <p class="text-[10px] text-gray-400">06.Mar.2023 - 09:39</p>
-
-                <p class="text-[10px] text-[#31bb88] font-medium">
-                  + 10,000.00
-                </p>
-              </div>
+              <input
+                id="currentPassword"
+                type="password"
+                placeholder="Current password"
+                class="w-full h-12 mt-2 px-4 rounded-xl border border-gray-200 outline-none focus:border-[#2db889] focus:ring-4 focus:ring-[#2db889]/10 transition"
+              />
             </div>
-          </section>
-        </main>
+
+            <!-- NEW PASSWORD -->
+
+            <div>
+              <label class="text-sm font-semibold"> New Password </label>
+
+              <input
+                id="newPassword"
+                type="password"
+                placeholder="New password"
+                class="w-full h-12 mt-2 px-4 rounded-xl border border-gray-200 outline-none focus:border-[#2db889] focus:ring-4 focus:ring-[#2db889]/10 transition"
+              />
+            </div>
+          </div>
+
+          <button
+            onclick="changePassword()"
+            class="mt-6 px-6 py-3 rounded-xl border border-[#2db889] text-[#2db889] font-bold hover:bg-[#e9f9f3] active:scale-95 transition"
+          >
+            Change Password
+          </button>
+        </div>
+
+        <!-- ================================= -->
+        <!-- DANGER ZONE -->
+        <!-- ================================= -->
+
+        <div class="bg-white rounded-3xl border border-red-100 p-6 sm:p-8 mt-6">
+          <h2 class="text-lg font-bold text-red-500">Account Actions</h2>
+
+          <p class="text-sm text-gray-400 mt-1">
+            Sign out of your Reen Bank account.
+          </p>
+
+          <button
+            onclick="logoutUser()"
+            class="mt-5 px-6 py-3 rounded-xl bg-red-50 text-red-500 font-bold hover:bg-red-500 hover:text-white active:scale-95 transition-all duration-300"
+          >
+          <a href="Login page.html">
+            Log Out
+          </button>
+          </a>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================================= -->
+    <!-- SUCCESS MESSAGE -->
+    <!-- ================================= -->
+
+    <div
+      id="successMessage"
+      class="fixed top-5 right-5 z-[100] translate-x-[120%] opacity-0 transition-all duration-500"
+    >
+      <div
+        class="bg-white rounded-2xl shadow-2xl border border-gray-100 p-4 flex items-center gap-3 min-w-[290px]"
+      >
+        <div
+          class="w-10 h-10 rounded-full bg-[#d9f7ec] flex items-center justify-center"
+        >
+          <span class="text-[#2db889] text-xl font-bold"> ✓ </span>
+        </div>
+
+        <div>
+          <p class="font-bold text-sm">Success</p>
+
+          <p id="successMessageText" class="text-xs text-gray-500 mt-1"></p>
+        </div>
       </div>
     </div>
 

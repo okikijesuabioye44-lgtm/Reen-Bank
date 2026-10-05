@@ -4370,7 +4370,7 @@ function logoutUser() {
 // ============================================================
 
 function goToProfile() {
-  window.location.href = "./Profile.html";
+  window.location.href = "./profile.html";
 }
 
 // ============================================================

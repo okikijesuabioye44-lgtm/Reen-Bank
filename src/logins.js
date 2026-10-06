@@ -731,7 +731,7 @@ function resendOTP() {
     );
 
     setTimeout(function () {
-      window.location.href = "Register page.html";
+      window.location.href = "register page.html";
     }, 1800);
 
     return;

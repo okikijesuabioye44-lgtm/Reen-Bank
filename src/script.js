@@ -753,7 +753,7 @@ function renderDashboardAccounts() {
 
             <img
               id="dashboardEye-${account.id}"
-              src="/images/hide account numbers.png"
+              src="hide account numbers.png"
               alt="Hide balance"
               class="w-5 h-5"
             >
@@ -835,7 +835,7 @@ function toggleDashboardBalance(accountId) {
     balance.dataset.hidden = "false";
 
     if (icon) {
-      icon.src = "/images/hide account numbers.png";
+      icon.src = "hide account numbers.png";
 
       icon.alt = "Hide balance";
     }
@@ -845,7 +845,7 @@ function toggleDashboardBalance(accountId) {
     balance.dataset.hidden = "true";
 
     if (icon) {
-      icon.src = "/images/hide account numbers.png";
+      icon.src = "hide account numbers.png";
 
       icon.alt = "Show balance";
     }
@@ -1661,7 +1661,7 @@ function renderAccountsPage() {
 
             <img
               id="accountEye-${account.id}"
-              src="/images/hide account numbers.png"
+              src="hide account numbers.png"
               alt="Hide balance"
               class="w-4 h-4"
             >
@@ -1742,7 +1742,7 @@ function toggleAccountBalance(accountId) {
     balance.dataset.hidden = "false";
 
     if (icon) {
-      icon.src = "/images/hide account numbers.png";
+      icon.src = "hide account numbers.png";
 
       icon.alt = "Hide balance";
     }
@@ -1752,7 +1752,7 @@ function toggleAccountBalance(accountId) {
     balance.dataset.hidden = "true";
 
     if (icon) {
-      icon.src = "/images/hide account numbers.png";
+      icon.src = "hide account numbers.png";
 
       icon.alt = "Show balance";
     }
@@ -2014,7 +2014,7 @@ function renderTransactionAccounts() {
 
             <img
               id="transactionEye-${account.id}"
-              src="/images/hide account numbers.png"
+              src="hide account numbers.png"
               alt="Account visibility"
               class="w-4 h-4"
             >
@@ -2053,13 +2053,13 @@ function toggleTransactionAccountBalance(accountId) {
 
     balance.dataset.hidden = "false";
 
-    card.src = "/images/hide account numbers.png";
+    card.src = "hide account numbers.png";
   } else {
     balance.textContent = "••••••••";
 
     balance.dataset.hidden = "true";
 
-    card.src = "./images/eye-off.png";
+    card.src = ".eye-off.png";
   }
 }
 
@@ -2150,7 +2150,7 @@ function renderTransactionsPage() {
 
         <img
           id="transactionAccountEye-${account.id}"
-          src="/images/hide account numbers.png"
+          src="hide account numbers.png"
           alt="Hide balance"
           class="w-4 h-4 object-contain"
         >
@@ -2460,7 +2460,7 @@ function toggleTransactionBalance(accountId) {
 
     balance.dataset.hidden = "false";
 
-    eye.src = "/images/hide account numbers.png";
+    eye.src = "hide account numbers.png";
 
     eye.alt = "Hide balance";
   } else {
@@ -2468,7 +2468,7 @@ function toggleTransactionBalance(accountId) {
 
     balance.dataset.hidden = "true";
 
-    eye.src = "/images/hide account numbers.png";
+    eye.src = "hide account numbers.png";
 
     eye.alt = "Show balance";
   }
@@ -2493,7 +2493,7 @@ function getSavedProfileImage() {
     }
   }
 
-  return "./images/profile-image.png";
+  return ".profile-image.png";
 }
 
 // ============================================================
@@ -2625,7 +2625,7 @@ function loadProfilePage() {
   // PROFILE IMAGE
   // ========================================================
 
-  const savedImage = profile.profileImage || "./images/profile-image.png";
+  const savedImage = profile.profileImage || ".profile-image.png";
 
   const profilePreview = document.getElementById("profilePreview");
 
@@ -4222,7 +4222,7 @@ function logoutUser() {
             class="text-[#2db889] text-3xl font-bold"
           >
             <img
-                  src="/images/arrow-right-from-bracket-solid.png"
+                  src="arrow-right-from-bracket-solid.png"
                   alt="Change photo"
                   class="w-11 h-15 object-contain"
                 />

@@ -3,7 +3,7 @@
 // ==========================================================
 
 console.log("======================================");
-console.log("REEN BANK - Logins.js LOADED");
+console.log("REEN BANK - logins.js LOADED");
 console.log("======================================");
 
 // ==========================================================
@@ -1037,7 +1037,7 @@ function setupLoginForm() {
 // ==========================================================
 
 document.addEventListener("DOMContentLoaded", function () {
-  console.log("Logins.js DOM READY");
+  console.log("logins.js DOM READY");
 
   loadOTPEmail();
 

@@ -420,7 +420,7 @@ function registerUser() {
   // GO TO OTP PAGE
   // ========================================================
 
-  window.location.href = "OTP.html";
+  window.location.href = "otp.html";
 }
 
 // ==========================================================

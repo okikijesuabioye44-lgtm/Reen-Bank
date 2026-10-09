@@ -4,6 +4,6 @@
     "tailwindcss": "^4.3.3"
   },
   "scripts": {
-    "dev": "tailwindcss -i .input.css -o .output.css --watch"
+    "dev": "tailwindcss -i ./src/input.css -o ./src/output.css --watch"
   }
 }
